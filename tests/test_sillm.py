@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from sllm.compat import (
+from sillm.compat import (
     SHELL_AUTOPILOT_BACKEND,
     SHELL_BACKEND_PROFILE_ID,
     agent_backend_aliases,
@@ -14,10 +14,10 @@ from sllm.compat import (
     shell_process_patterns,
     tool_registry_entries,
 )
-from sllm.controller import ShellDriveRequest, build_drive_plan
-from sllm.nlp import ShellIntent, intent_from_text
-from sllm.registry import detect_clients, get_client_spec, normalize_client_id
-from sllm.validation import (
+from sillm.controller import ShellDriveRequest, build_drive_plan
+from sillm.nlp import ShellIntent, intent_from_text
+from sillm.registry import detect_clients, get_client_spec, normalize_client_id
+from sillm.validation import (
     ecosystem_status,
     intent_contracts,
     validate_intent,
