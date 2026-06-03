@@ -293,34 +293,6 @@ wheels = [
 ]
 
 [[package]]
-name = "callm"
-version = "0.1.20"
-source = { editable = "." }
-
-[package.optional-dependencies]
-dev = [
-    { name = "build" },
-    { name = "costs" },
-    { name = "goal" },
-    { name = "pfix" },
-    { name = "pytest" },
-    { name = "ruff" },
-    { name = "twine" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "build", marker = "extra == 'dev'", specifier = ">=1.0,<2.0" },
-    { name = "costs", marker = "extra == 'dev'", specifier = ">=0.1.20" },
-    { name = "goal", marker = "extra == 'dev'", specifier = ">=2.1.0" },
-    { name = "pfix", marker = "extra == 'dev'", specifier = ">=0.1.60" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0,<10.0" },
-    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.11,<0.16" },
-    { name = "twine", marker = "extra == 'dev'", specifier = ">=6.0,<7.0" },
-]
-provides-extras = ["dev"]
-
-[[package]]
 name = "certifi"
 version = "2026.5.20"
 source = { registry = "https://pypi.org/simple" }
@@ -2742,6 +2714,34 @@ sdist = { url = "https://files.pythonhosted.org/packages/28/e3/55dcc2cfbc3ca9c29
 wheels = [
     { url = "https://files.pythonhosted.org/packages/f1/7b/ce1eafaf1a76852e2ec9b22edecf1daa58175c090266e9f6c64afcd81d91/stack_data-0.6.3-py3-none-any.whl", hash = "sha256:d5558e0c25a4cb0853cddad3d77da9891a08cb85dd9f9f91b9f8cd66e511e695", size = 24521, upload-time = "2023-09-30T13:58:03.53Z" },
 ]
+
+[[package]]
+name = "tellm"
+version = "0.1.21"
+source = { editable = "." }
+
+[package.optional-dependencies]
+dev = [
+    { name = "build" },
+    { name = "costs" },
+    { name = "goal" },
+    { name = "pfix" },
+    { name = "pytest" },
+    { name = "ruff" },
+    { name = "twine" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "build", marker = "extra == 'dev'", specifier = ">=1.0,<2.0" },
+    { name = "costs", marker = "extra == 'dev'", specifier = ">=0.1.20" },
+    { name = "goal", marker = "extra == 'dev'", specifier = ">=2.1.0" },
+    { name = "pfix", marker = "extra == 'dev'", specifier = ">=0.1.60" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0,<10.0" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.11,<0.16" },
+    { name = "twine", marker = "extra == 'dev'", specifier = ">=6.0,<7.0" },
+]
+provides-extras = ["dev"]
 
 [[package]]
 name = "tiktoken"
