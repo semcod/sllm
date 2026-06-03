@@ -15,9 +15,14 @@ from sllm.compat import (
     tool_registry_entries,
 )
 from sllm.controller import ShellDriveRequest, build_drive_plan
-from sllm.nlp import intent_from_text
+from sllm.nlp import ShellIntent, intent_from_text
 from sllm.registry import detect_clients, get_client_spec, normalize_client_id
-from sllm.validation import validate_intent
+from sllm.validation import (
+    ecosystem_status,
+    intent_contracts,
+    validate_intent,
+    validate_intent_contracts,
+)
 
 
 def test_registry_normalizes_common_aliases() -> None:
@@ -83,3 +88,23 @@ def test_nlp_rules_select_client_and_prompt() -> None:
     assert intent.client_id == "aider"
     assert intent.prompt == "napraw testy"
     assert validate_intent(intent).ok is True
+
+
+def test_validate_intent_rejects_raw_dsl_without_sllm_drive() -> None:
+    intent = ShellIntent(
+        client_id="aider",
+        prompt="Fix tests",
+        raw_dsl={"steps": [{"action": "send_email", "config": {}}]},
+    )
+    result = validate_intent(intent)
+    assert result.ok is False
+    assert "raw_dsl has no sllm drive action" in result.errors
+
+
+def test_intent_contracts_are_exposed_for_ecosystem_validation() -> None:
+    assert intent_contracts()
+    contracts = validate_intent_contracts()
+    assert contracts["ok"] is True
+    status = ecosystem_status()
+    assert "sllm.drive" in status["expected_actions"]
+    assert "intent_contracts" in status
