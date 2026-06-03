@@ -4,6 +4,9 @@ from pathlib import Path
 
 from sllm.compat import (
     SHELL_AUTOPILOT_BACKEND,
+    SHELL_BACKEND_PROFILE_ID,
+    agent_backend_aliases,
+    agent_backend_profiles,
     autopilot_backend_for_client,
     detect_koru_agent_rows,
     is_client_available,
@@ -51,6 +54,11 @@ def test_compat_exports_koru_agent_rows(monkeypatch) -> None:
     assert registry["aider"]["invoke"] == (
         "koru sllm drive --client aider --prompt '<prompt>' --execute"
     )
+    assert registry["codex-cli"]["invoke"] == (
+        "koru sllm drive --client codex --prompt '<prompt>' --execute"
+    )
+    assert agent_backend_aliases()["sllm_shell"] == SHELL_BACKEND_PROFILE_ID
+    assert agent_backend_profiles()[0]["id"] == SHELL_BACKEND_PROFILE_ID
 
 
 def test_build_drive_plan_uses_message_file_for_aider(monkeypatch, tmp_path: Path) -> None:

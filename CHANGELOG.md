@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-06-03
+
+### Docs
+- Update README.md
+
+### Test
+- Update tests/test_sllm.py
+
+### Other
+- Update uv.lock
+
 ## [0.1.2] - 2026-06-03
 
 ### Docs

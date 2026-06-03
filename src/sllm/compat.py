@@ -17,6 +17,31 @@ from sllm.controller import (
 from sllm.registry import detect_clients, get_client_spec, iter_client_specs, normalize_client_id
 
 SHELL_AUTOPILOT_BACKEND = "sllm_shell"
+SHELL_BACKEND_PROFILE_ID = "vendor_agent_cli"
+
+
+def agent_backend_profiles() -> tuple[dict[str, object], ...]:
+    """Return Koru-compatible backend profile metadata for shell LLM control."""
+    return (
+        {
+            "id": SHELL_BACKEND_PROFILE_ID,
+            "transport": "sllm shell subprocess",
+            "can_push_chat": True,
+            "can_pull_chat_text": False,
+            "needs_gui_session": False,
+            "mcp_tools_only": False,
+            "primary_code": "/home/tom/github/semcod/sllm",
+        },
+    )
+
+
+def agent_backend_aliases() -> dict[str, str]:
+    """Return Koru backend aliases owned by SLLM."""
+    return {
+        "sllm_shell": SHELL_BACKEND_PROFILE_ID,
+        "cursor_cli": SHELL_BACKEND_PROFILE_ID,
+        "vendor_cli": SHELL_BACKEND_PROFILE_ID,
+    }
 
 
 def is_shell_llm_client(agent_id: str) -> bool:
@@ -40,9 +65,10 @@ def tool_registry_entries() -> tuple[dict[str, object], ...]:
     entries: list[dict[str, object]] = []
     stable = {"claude-code", "aider"}
     for spec in iter_client_specs():
+        registry_id = "codex-cli" if spec.id == "codex" else spec.id
         entries.append(
             {
-                "id": spec.id,
+                "id": registry_id,
                 "name": spec.label,
                 "category": "cli_agent",
                 "lane": "native",
@@ -164,6 +190,9 @@ def launch_koru_agent(
 
 __all__ = [
     "SHELL_AUTOPILOT_BACKEND",
+    "SHELL_BACKEND_PROFILE_ID",
+    "agent_backend_aliases",
+    "agent_backend_profiles",
     "autopilot_backend_for_client",
     "detect_koru_agent_rows",
     "drive_koru_chat",
