@@ -487,8 +487,8 @@ wheels = [
 ]
 
 [[package]]
-name = "cllm"
-version = "0.1.14"
+name = "clilm"
+version = "0.1.15"
 source = { editable = "." }
 
 [package.optional-dependencies]

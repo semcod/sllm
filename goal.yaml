@@ -13,7 +13,7 @@
 
 version: '1.0'
 project:
-  name: cllm
+  name: clilm
   type:
   - python
   description: Shell LLM client control plane for semcod/coru automation.
@@ -224,7 +224,7 @@ strategies:
   python:
     test: pytest tests/ -v
     build: python -m build
-    publish: twine upload dist/cllm-{version}*
+    publish: twine upload dist/clilm-{version}*
     publish_enabled: true
     dependencies:
       file: requirements.txt
@@ -232,7 +232,7 @@ strategies:
   nodejs:
     test: npm test
     build: npm run build
-    publish: twine upload dist/cllm-{version}*
+    publish: twine upload dist/clilm-{version}*
     publish_enabled: true
     dependencies:
       file: package-lock.json
@@ -240,7 +240,7 @@ strategies:
   rust:
     test: cargo test
     build: cargo build --release
-    publish: twine upload dist/cllm-{version}*
+    publish: twine upload dist/clilm-{version}*
     publish_enabled: true
     dependencies:
       file: Cargo.lock
