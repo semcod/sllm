@@ -484,36 +484,6 @@ wheels = [
 ]
 
 [[package]]
-name = "cllm"
-version = "0.1.28"
-source = { editable = "." }
-
-[package.optional-dependencies]
-dev = [
-    { name = "build" },
-    { name = "costs" },
-    { name = "goal" },
-    { name = "pfix" },
-    { name = "pytest" },
-    { name = "ruff" },
-    { name = "testql" },
-    { name = "twine" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "build", marker = "extra == 'dev'", specifier = ">=1.0,<2.0" },
-    { name = "costs", marker = "extra == 'dev'", specifier = ">=0.1.20" },
-    { name = "goal", marker = "extra == 'dev'", specifier = ">=2.1.0" },
-    { name = "pfix", marker = "extra == 'dev'", specifier = ">=0.1.60" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0,<10.0" },
-    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.11,<0.16" },
-    { name = "testql", marker = "extra == 'dev'", specifier = ">=1.2.0" },
-    { name = "twine", marker = "extra == 'dev'", specifier = ">=6.0,<7.0" },
-]
-provides-extras = ["dev"]
-
-[[package]]
 name = "colorama"
 version = "0.4.6"
 source = { registry = "https://pypi.org/simple" }
@@ -2964,6 +2934,36 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/2f/68/a18b4f307086954fdae32714cb4f85562e34f9d34ab206e61f1816aa6018/tiktoken-0.13.0-cp314-cp314t-musllinux_1_2_x86_64.whl", hash = "sha256:5cb65b60b9408563676d874a3a4ee573370066f0dc4e29d84e82e989c6517424", size = 1239218, upload-time = "2026-05-15T04:51:16.103Z" },
     { url = "https://files.pythonhosted.org/packages/16/5b/f2aa703a4fc5d2dff73460a7d46cc2f3f44aa0f3dd8eeb20d2a0ecf68862/tiktoken-0.13.0-cp314-cp314t-win_amd64.whl", hash = "sha256:85b78cc3a2c3d48723ca751fa981f1fedccd54194ca0471b957364353a898b07", size = 918110, upload-time = "2026-05-15T04:51:17.237Z" },
 ]
+
+[[package]]
+name = "tillm"
+version = "0.1.29"
+source = { editable = "." }
+
+[package.optional-dependencies]
+dev = [
+    { name = "build" },
+    { name = "costs" },
+    { name = "goal" },
+    { name = "pfix" },
+    { name = "pytest" },
+    { name = "ruff" },
+    { name = "testql" },
+    { name = "twine" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "build", marker = "extra == 'dev'", specifier = ">=1.0,<2.0" },
+    { name = "costs", marker = "extra == 'dev'", specifier = ">=0.1.20" },
+    { name = "goal", marker = "extra == 'dev'", specifier = ">=2.1.0" },
+    { name = "pfix", marker = "extra == 'dev'", specifier = ">=0.1.60" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0,<10.0" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.11,<0.16" },
+    { name = "testql", marker = "extra == 'dev'", specifier = ">=1.2.0" },
+    { name = "twine", marker = "extra == 'dev'", specifier = ">=6.0,<7.0" },
+]
+provides-extras = ["dev"]
 
 [[package]]
 name = "tinycss2"

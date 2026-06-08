@@ -3,8 +3,8 @@ requires = ["setuptools>=77", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "cllm"
-version = "0.1.28"
+name = "tillm"
+version = "0.1.29"
 description = "Shell LLM client control plane for semcod/coru automation."
 readme = "README.md"
 requires-python = ">=3.11"
