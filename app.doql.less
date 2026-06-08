@@ -1,19 +1,38 @@
 // LESS format — define @variables here as needed
 
 app {
-  name: sllm;
-  version: 0.1.8;
+  name: fullm;
+  version: 0.1.25;
+  description: "Shell LLM client control plane for semcod/coru automation.";
+  license: Apache-2.0;
+  authors: "Semcod, Tom Sapletta <tom@sapletta.com>";
+  keywords: "llm, shell, aider, claude, codex, automation";
 }
 
 dependencies {
-  dev: "pytest>=8.0,<10.0, ruff>=0.11,<0.16, goal>=2.1.0, costs>=0.1.20, pfix>=0.1.60";
+  dev: "build>=1.0,<2.0, pytest>=8.0,<10.0, ruff>=0.11,<0.16, twine>=6.0,<7.0, goal>=2.1.0, costs>=0.1.20, pfix>=0.1.60";
 }
 
 interface[type="cli"] {
   framework: argparse;
 }
+interface[type="cli"] page[name="sillm"] {
+  entry: sillm.cli:main;
+}
 interface[type="cli"] page[name="sllm"] {
+  entry: sillm.cli:main;
+}
 
+integration[name="nlp"] {
+  type: api;
+}
+
+tests {
+  import: testql-scenarios/**/*.testql.toon.yaml;
+}
+
+env_vars {
+  keys: OPENROUTER_API_KEY, LLM_MODEL, PFIX_AUTO_APPLY, PFIX_AUTO_INSTALL_DEPS, PFIX_AUTO_RESTART, PFIX_MAX_RETRIES, PFIX_DRY_RUN, PFIX_ENABLED, PFIX_GIT_COMMIT, PFIX_GIT_PREFIX, PFIX_CREATE_BACKUPS, SILLM_DEFAULT_CLIENT, SILLM_NLP2DSL;
 }
 
 deploy {
@@ -23,5 +42,9 @@ deploy {
 environment[name="local"] {
   runtime: python;
   env_file: .env;
+  template_file: .env.example;
   python_version: >=3.11;
+  vars: LLM_MODEL, OPENROUTER_API_KEY, PFIX_AUTO_APPLY, PFIX_AUTO_INSTALL_DEPS, PFIX_AUTO_RESTART, PFIX_CREATE_BACKUPS, PFIX_DRY_RUN, PFIX_ENABLED, PFIX_GIT_COMMIT, PFIX_GIT_PREFIX, PFIX_MAX_RETRIES;
+  runtime_llm: OPENROUTER_API_KEY;
+  runtime_pfix: PFIX_AUTO_APPLY, PFIX_AUTO_INSTALL_DEPS, PFIX_AUTO_RESTART, PFIX_CREATE_BACKUPS, PFIX_DRY_RUN, PFIX_ENABLED, PFIX_GIT_COMMIT, PFIX_GIT_PREFIX, PFIX_MAX_RETRIES;
 }
