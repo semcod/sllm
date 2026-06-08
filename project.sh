@@ -2,8 +2,15 @@
 set -e
 clear
 
-VENV="venv"
+if [ -d ".venv" ]; then
+    VENV=".venv"
+elif [ -d "venv" ]; then
+    VENV="venv"
+else
+    VENV=".venv"
+fi
 PIP="$VENV/bin/pip"
+PYTHON="$VENV/bin/python3"
 
 if [ ! -f "$PIP" ]; then
     echo "Creating virtual environment..."
@@ -41,10 +48,9 @@ $VENV/bin/sumd .
 $VENV/bin/sumr .
 
 
-pip install -U goal
-$PIP install goal --upgrade --quiet
+$PIP install goal testql --upgrade --quiet
 
 bash ./tree.sh
-python3 -m testql.cli inspect https://tom.sapletta.com/ --scan-network --out-dir .testql
+$PYTHON -m testql.cli inspect https://tom.sapletta.com/ --scan-network --out-dir .testql
 
 #$VENV/bin/goal -a

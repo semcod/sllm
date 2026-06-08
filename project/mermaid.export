@@ -1,100 +1,102 @@
 flowchart TD
 %% generated in 0.00s
-    subgraph src__sllm
-        src__sllm__cli___print["_print"]
-        src__sllm__cli___build_parser["_build_parser"]
-        src__sllm__cli___read_prompt["_read_prompt"]
-        src__sllm__cli___drive["_drive"]
-        src__sllm__cli___nlp["_nlp"]
-        src__sllm__cli__main["main"]
-        src__sllm__controller__ShellDrivePlan__shell_preview["shell_preview"]
-        src__sllm__controller__ShellDrivePlan__to_dict["to_dict"]
-        src__sllm__controller__ShellDriveResult__to_dict["to_dict"]
-        src__sllm__controller___prompt_root["_prompt_root"]
-        src__sllm__controller__save_prompt["save_prompt"]
-        src__sllm__controller___resolve_spec["_resolve_spec"]
-        src__sllm__controller___resolve_command["_resolve_command"]
-        src__sllm__controller__build_drive_plan["build_drive_plan"]
-        src__sllm__controller___timeout_value["_timeout_value"]
-        src__sllm__controller__drive_shell_llm("drive_shell_llm CC=10")
-        src__sllm__controller__result_from_error["result_from_error"]
-        src__sllm__registry__ShellClientSpec__command_path["command_path"]
-        src__sllm__registry__ShellClientSpec__to_dict["to_dict"]
-        src__sllm__registry__normalize_client_id["normalize_client_id"]
-        src__sllm__registry__iter_client_specs["iter_client_specs"]
-        src__sllm__registry__get_client_spec["get_client_spec"]
-        src__sllm__registry__detect_clients["detect_clients"]
-        src__sllm__validation__ValidationResult__to_dict["to_dict"]
-        src__sllm__validation__validate_intent["validate_intent"]
-        src__sllm__validation___validate_raw_dsl("_validate_raw_dsl CC=9")
-        src__sllm__validation__intent_contracts["intent_contracts"]
-        src__sllm__validation__validate_intent_contracts["validate_intent_contracts"]
-        src__sllm__validation__ecosystem_status["ecosystem_status"]
-        src__sllm__nlp__ShellIntent__to_dsl["to_dsl"]
-        src__sllm__nlp___client_from_text["_client_from_text"]
-        src__sllm__nlp___strip_drive_prefix["_strip_drive_prefix"]
-        src__sllm__nlp___intent_from_nlp2dsl{{_intent_from_nlp2dsl CC=15}}
-        src__sllm__nlp__intent_from_text["intent_from_text"]
-        src__sllm__compat__agent_backend_profiles["agent_backend_profiles"]
-        src__sllm__compat__agent_backend_aliases["agent_backend_aliases"]
-        src__sllm__compat__is_shell_llm_client["is_shell_llm_client"]
-        src__sllm__compat__is_client_available["is_client_available"]
-        src__sllm__compat__shell_client_ids["shell_client_ids"]
-        src__sllm__compat__shell_process_patterns["shell_process_patterns"]
-        src__sllm__compat__tool_registry_entries["tool_registry_entries"]
-        src__sllm__compat__autopilot_backend_for_client["autopilot_backend_for_client"]
-        src__sllm__compat__detect_koru_agent_rows["detect_koru_agent_rows"]
-        src__sllm__compat__drive_koru_chat["drive_koru_chat"]
-        src__sllm__compat__launch_koru_agent("launch_koru_agent CC=8")
+    subgraph src__sillm
+        src__sillm__cli___print["_print"]
+        src__sillm__cli___build_parser["_build_parser"]
+        src__sillm__cli___normalize_extra_arg_tokens["_normalize_extra_arg_tokens"]
+        src__sillm__cli___read_prompt["_read_prompt"]
+        src__sillm__cli___drive["_drive"]
+        src__sillm__cli___nlp["_nlp"]
+        src__sillm__cli__main["main"]
+        src__sillm__controller__ShellDrivePlan__shell_preview["shell_preview"]
+        src__sillm__controller__ShellDrivePlan__to_dict["to_dict"]
+        src__sillm__controller__ShellDriveResult__to_dict["to_dict"]
+        src__sillm__controller___prompt_root["_prompt_root"]
+        src__sillm__controller__save_prompt["save_prompt"]
+        src__sillm__controller___resolve_spec["_resolve_spec"]
+        src__sillm__controller___resolve_command["_resolve_command"]
+        src__sillm__controller__build_drive_plan["build_drive_plan"]
+        src__sillm__controller___timeout_value["_timeout_value"]
+        src__sillm__controller__drive_shell_llm("drive_shell_llm CC=10")
+        src__sillm__controller__result_from_error["result_from_error"]
+        src__sillm__registry__ShellClientSpec__command_path["command_path"]
+        src__sillm__registry__ShellClientSpec__to_dict["to_dict"]
+        src__sillm__registry__normalize_client_id["normalize_client_id"]
+        src__sillm__registry__iter_client_specs["iter_client_specs"]
+        src__sillm__registry__get_client_spec["get_client_spec"]
+        src__sillm__registry__detect_clients["detect_clients"]
+        src__sillm__validation__ValidationResult__to_dict["to_dict"]
+        src__sillm__validation__validate_intent["validate_intent"]
+        src__sillm__validation___validate_raw_dsl("_validate_raw_dsl CC=9")
+        src__sillm__validation__intent_contracts["intent_contracts"]
+        src__sillm__validation__validate_intent_contracts["validate_intent_contracts"]
+        src__sillm__validation__ecosystem_status["ecosystem_status"]
+        src__sillm__nlp__ShellIntent__to_dsl["to_dsl"]
+        src__sillm__nlp___client_from_text["_client_from_text"]
+        src__sillm__nlp___strip_drive_prefix["_strip_drive_prefix"]
+        src__sillm__nlp___intent_from_nlp2dsl{{_intent_from_nlp2dsl CC=15}}
+        src__sillm__nlp__intent_from_text["intent_from_text"]
+        src__sillm__compat__agent_backend_profiles["agent_backend_profiles"]
+        src__sillm__compat__agent_backend_aliases["agent_backend_aliases"]
+        src__sillm__compat__is_shell_llm_client["is_shell_llm_client"]
+        src__sillm__compat__is_client_available["is_client_available"]
+        src__sillm__compat__shell_client_ids["shell_client_ids"]
+        src__sillm__compat__shell_process_patterns["shell_process_patterns"]
+        src__sillm__compat__tool_registry_entries["tool_registry_entries"]
+        src__sillm__compat__autopilot_backend_for_client["autopilot_backend_for_client"]
+        src__sillm__compat__detect_koru_agent_rows["detect_koru_agent_rows"]
+        src__sillm__compat__drive_koru_chat["drive_koru_chat"]
+        src__sillm__compat__launch_koru_agent("launch_koru_agent CC=8")
     end
-    src__sllm__cli___drive --> src__sllm__cli___print
-    src__sllm__cli___drive --> src__sllm__controller__drive_shell_llm
-    src__sllm__cli___drive --> src__sllm__controller__result_from_error
-    src__sllm__cli___drive --> src__sllm__cli___read_prompt
-    src__sllm__cli___nlp --> src__sllm__nlp__intent_from_text
-    src__sllm__cli___nlp --> src__sllm__validation__validate_intent
-    src__sllm__cli___nlp --> src__sllm__controller__drive_shell_llm
-    src__sllm__cli___nlp --> src__sllm__cli___print
-    src__sllm__cli__main --> src__sllm__cli___print
-    src__sllm__cli__main --> src__sllm__cli___drive
-    src__sllm__cli__main --> src__sllm__cli___nlp
-    src__sllm__cli__main --> src__sllm__cli___build_parser
-    src__sllm__cli__main --> src__sllm__registry__detect_clients
-    src__sllm__cli__main --> src__sllm__validation__ecosystem_status
-    src__sllm__controller__save_prompt --> src__sllm__controller___prompt_root
-    src__sllm__controller___resolve_spec --> src__sllm__registry__get_client_spec
-    src__sllm__controller__build_drive_plan --> src__sllm__controller___resolve_spec
-    src__sllm__controller__build_drive_plan --> src__sllm__controller___resolve_command
-    src__sllm__controller__build_drive_plan --> src__sllm__controller__save_prompt
-    src__sllm__controller__drive_shell_llm --> src__sllm__controller__build_drive_plan
-    src__sllm__controller__drive_shell_llm --> src__sllm__controller___timeout_value
-    src__sllm__registry__get_client_spec --> src__sllm__registry__normalize_client_id
-    src__sllm__registry__detect_clients --> src__sllm__registry__normalize_client_id
-    src__sllm__validation__validate_intent --> src__sllm__registry__get_client_spec
-    src__sllm__validation__validate_intent --> src__sllm__validation___validate_raw_dsl
-    src__sllm__validation___validate_raw_dsl --> src__sllm__registry__normalize_client_id
-    src__sllm__validation__ecosystem_status --> src__sllm__validation__validate_intent_contracts
-    src__sllm__nlp___client_from_text --> src__sllm__registry__iter_client_specs
-    src__sllm__nlp___client_from_text --> src__sllm__registry__normalize_client_id
-    src__sllm__nlp___intent_from_nlp2dsl --> src__sllm__registry__normalize_client_id
-    src__sllm__nlp__intent_from_text --> src__sllm__nlp___client_from_text
-    src__sllm__nlp__intent_from_text --> src__sllm__nlp___intent_from_nlp2dsl
-    src__sllm__nlp__intent_from_text --> src__sllm__registry__get_client_spec
-    src__sllm__nlp__intent_from_text --> src__sllm__nlp___strip_drive_prefix
-    src__sllm__compat__is_shell_llm_client --> src__sllm__registry__get_client_spec
-    src__sllm__compat__is_client_available --> src__sllm__registry__get_client_spec
-    src__sllm__compat__shell_client_ids --> src__sllm__registry__iter_client_specs
-    src__sllm__compat__shell_process_patterns --> src__sllm__registry__iter_client_specs
-    src__sllm__compat__tool_registry_entries --> src__sllm__registry__iter_client_specs
-    src__sllm__compat__autopilot_backend_for_client --> src__sllm__compat__is_shell_llm_client
-    src__sllm__compat__detect_koru_agent_rows --> src__sllm__registry__detect_clients
-    src__sllm__compat__drive_koru_chat --> src__sllm__controller__drive_shell_llm
-    src__sllm__compat__launch_koru_agent --> src__sllm__registry__normalize_client_id
-    src__sllm__compat__launch_koru_agent --> src__sllm__registry__get_client_spec
-    src__sllm__compat__launch_koru_agent --> src__sllm__controller__save_prompt
-    src__sllm__compat__launch_koru_agent --> src__sllm__controller__build_drive_plan
+    src__sillm__cli___drive --> src__sillm__cli___print
+    src__sillm__cli___drive --> src__sillm__controller__drive_shell_llm
+    src__sillm__cli___drive --> src__sillm__controller__result_from_error
+    src__sillm__cli___drive --> src__sillm__cli___read_prompt
+    src__sillm__cli___nlp --> src__sillm__nlp__intent_from_text
+    src__sillm__cli___nlp --> src__sillm__validation__validate_intent
+    src__sillm__cli___nlp --> src__sillm__controller__drive_shell_llm
+    src__sillm__cli___nlp --> src__sillm__cli___print
+    src__sillm__cli__main --> src__sillm__cli___normalize_extra_arg_tokens
+    src__sillm__cli__main --> src__sillm__cli___print
+    src__sillm__cli__main --> src__sillm__cli___drive
+    src__sillm__cli__main --> src__sillm__cli___nlp
+    src__sillm__cli__main --> src__sillm__cli___build_parser
+    src__sillm__cli__main --> src__sillm__registry__detect_clients
+    src__sillm__cli__main --> src__sillm__validation__ecosystem_status
+    src__sillm__controller__save_prompt --> src__sillm__controller___prompt_root
+    src__sillm__controller___resolve_spec --> src__sillm__registry__get_client_spec
+    src__sillm__controller__build_drive_plan --> src__sillm__controller___resolve_spec
+    src__sillm__controller__build_drive_plan --> src__sillm__controller___resolve_command
+    src__sillm__controller__build_drive_plan --> src__sillm__controller__save_prompt
+    src__sillm__controller__drive_shell_llm --> src__sillm__controller__build_drive_plan
+    src__sillm__controller__drive_shell_llm --> src__sillm__controller___timeout_value
+    src__sillm__registry__get_client_spec --> src__sillm__registry__normalize_client_id
+    src__sillm__registry__detect_clients --> src__sillm__registry__normalize_client_id
+    src__sillm__validation__validate_intent --> src__sillm__registry__get_client_spec
+    src__sillm__validation__validate_intent --> src__sillm__validation___validate_raw_dsl
+    src__sillm__validation___validate_raw_dsl --> src__sillm__registry__normalize_client_id
+    src__sillm__validation__ecosystem_status --> src__sillm__validation__validate_intent_contracts
+    src__sillm__nlp___client_from_text --> src__sillm__registry__iter_client_specs
+    src__sillm__nlp___client_from_text --> src__sillm__registry__normalize_client_id
+    src__sillm__nlp___intent_from_nlp2dsl --> src__sillm__registry__normalize_client_id
+    src__sillm__nlp__intent_from_text --> src__sillm__nlp___client_from_text
+    src__sillm__nlp__intent_from_text --> src__sillm__nlp___intent_from_nlp2dsl
+    src__sillm__nlp__intent_from_text --> src__sillm__registry__get_client_spec
+    src__sillm__nlp__intent_from_text --> src__sillm__nlp___strip_drive_prefix
+    src__sillm__compat__is_shell_llm_client --> src__sillm__registry__get_client_spec
+    src__sillm__compat__is_client_available --> src__sillm__registry__get_client_spec
+    src__sillm__compat__shell_client_ids --> src__sillm__registry__iter_client_specs
+    src__sillm__compat__shell_process_patterns --> src__sillm__registry__iter_client_specs
+    src__sillm__compat__tool_registry_entries --> src__sillm__registry__iter_client_specs
+    src__sillm__compat__autopilot_backend_for_client --> src__sillm__compat__is_shell_llm_client
+    src__sillm__compat__detect_koru_agent_rows --> src__sillm__registry__detect_clients
+    src__sillm__compat__drive_koru_chat --> src__sillm__controller__drive_shell_llm
+    src__sillm__compat__launch_koru_agent --> src__sillm__registry__normalize_client_id
+    src__sillm__compat__launch_koru_agent --> src__sillm__registry__get_client_spec
+    src__sillm__compat__launch_koru_agent --> src__sillm__controller__save_prompt
+    src__sillm__compat__launch_koru_agent --> src__sillm__controller__build_drive_plan
 
     classDef highCC fill:#ff6b6b,stroke:#c92a2a,color:#fff
     classDef medCC fill:#ffd43b,stroke:#f08c00,color:#000
-    class src__sllm__nlp___intent_from_nlp2dsl highCC
-    class src__sllm__controller__drive_shell_llm,src__sllm__validation___validate_raw_dsl,src__sllm__compat__launch_koru_agent medCC
+    class src__sillm__nlp___intent_from_nlp2dsl highCC
+    class src__sillm__controller__drive_shell_llm,src__sillm__validation___validate_raw_dsl,src__sillm__compat__launch_koru_agent medCC

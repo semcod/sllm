@@ -5,39 +5,39 @@
 
 - **Project**: /home/tom/github/semcod/sllm
 - **Primary Language**: python
-- **Languages**: python: 7, shell: 2, yaml: 1, toml: 1
+- **Languages**: python: 8, yaml: 2, txt: 1, shell: 1, toml: 1
 - **Analysis Mode**: static
-- **Total Functions**: 45
+- **Total Functions**: 46
 - **Total Classes**: 9
-- **Modules**: 11
+- **Modules**: 13
 - **Entry Points**: 19
 
 ## Architecture by Module
 
-### src.sllm.controller
+### src.sillm.controller
 - **Functions**: 11
 - **Classes**: 6
 - **File**: `controller.py`
 
-### src.sllm.compat
+### src.sillm.compat
 - **Functions**: 11
 - **File**: `compat.py`
 
-### src.sllm.cli
-- **Functions**: 6
+### src.sillm.cli
+- **Functions**: 7
 - **File**: `cli.py`
 
-### src.sllm.registry
+### src.sillm.registry
 - **Functions**: 6
 - **Classes**: 1
 - **File**: `registry.py`
 
-### src.sllm.validation
+### src.sillm.validation
 - **Functions**: 6
 - **Classes**: 1
 - **File**: `validation.py`
 
-### src.sllm.nlp
+### src.sillm.nlp
 - **Functions**: 5
 - **Classes**: 1
 - **File**: `nlp.py`
@@ -46,64 +46,64 @@
 
 Main execution flows into the system:
 
-### src.sllm.compat.launch_koru_agent
-> Launch a Koru agent through SLLM while preserving TTY behavior.
+### src.sillm.compat.launch_koru_agent
+> Launch a Koru agent through SILLM while preserving TTY behavior.
 
 Clients with a file/arg prompt contract receive the prompt directly.
-Stdin-only clien
-- **Calls**: src.sllm.registry.normalize_client_id, src.sllm.registry.get_client_spec, src.sllm.controller.save_prompt, print, print, print, ShellDriveRequest, src.sllm.controller.build_drive_plan
+Stdin-only clie
+- **Calls**: src.sillm.registry.normalize_client_id, src.sillm.registry.get_client_spec, src.sillm.controller.save_prompt, print, print, print, ShellDriveRequest, src.sillm.controller.build_drive_plan
 
-### src.sllm.cli.main
-- **Calls**: None.parse_args, AssertionError, src.sllm.cli._print, src.sllm.cli._drive, src.sllm.cli._nlp, src.sllm.cli._print, src.sllm.cli._build_parser, src.sllm.registry.detect_clients
+### src.sillm.cli.main
+- **Calls**: None.parse_args, AssertionError, src.sillm.cli._normalize_extra_arg_tokens, src.sillm.cli._print, src.sillm.cli._drive, src.sillm.cli._nlp, src.sillm.cli._print, src.sillm.cli._build_parser
 
-### src.sllm.compat.detect_koru_agent_rows
+### src.sillm.compat.detect_koru_agent_rows
 > Return SLLM clients in Koru ``AgentOption.to_dict`` shape.
-- **Calls**: src.sllm.registry.detect_clients, row.get, str, bool, rows.append, row.get, bool, bool
+- **Calls**: src.sillm.registry.detect_clients, row.get, str, bool, rows.append, row.get, bool, bool
 
-### src.sllm.controller.ShellDrivePlan.to_dict
+### src.sillm.controller.ShellDrivePlan.to_dict
 - **Calls**: list, self.shell_preview, str, str
 
-### src.sllm.registry.ShellClientSpec.to_dict
+### src.sillm.registry.ShellClientSpec.to_dict
 - **Calls**: self.command_path, list, list, list
 
-### src.sllm.compat.tool_registry_entries
-- **Calls**: src.sllm.registry.iter_client_specs, tuple, entries.append, list
+### src.sillm.compat.tool_registry_entries
+- **Calls**: src.sillm.registry.iter_client_specs, tuple, entries.append, list
 
-### src.sllm.compat.is_client_available
-- **Calls**: src.sllm.registry.get_client_spec, bool, spec.command_path
+### src.sillm.compat.is_client_available
+- **Calls**: src.sillm.registry.get_client_spec, bool, spec.command_path
 
-### src.sllm.compat.drive_koru_chat
-- **Calls**: src.sllm.controller.drive_shell_llm, result.to_dict, ShellDriveRequest
+### src.sillm.compat.drive_koru_chat
+- **Calls**: src.sillm.controller.drive_shell_llm, result.to_dict, ShellDriveRequest
 
-### src.sllm.controller.ShellDrivePlan.shell_preview
+### src.sillm.controller.ShellDrivePlan.shell_preview
 - **Calls**: None.join, shlex.quote
 
-### src.sllm.controller.ShellDriveResult.to_dict
+### src.sillm.controller.ShellDriveResult.to_dict
 - **Calls**: list, str
 
-### src.sllm.compat.shell_client_ids
-- **Calls**: tuple, src.sllm.registry.iter_client_specs
+### src.sillm.compat.shell_client_ids
+- **Calls**: tuple, src.sillm.registry.iter_client_specs
 
-### src.sllm.compat.shell_process_patterns
-- **Calls**: tuple, src.sllm.registry.iter_client_specs
+### src.sillm.compat.shell_process_patterns
+- **Calls**: tuple, src.sillm.registry.iter_client_specs
 
-### src.sllm.registry.ShellClientSpec.command_path
+### src.sillm.registry.ShellClientSpec.command_path
 - **Calls**: resolver
 
-### src.sllm.validation.ValidationResult.to_dict
+### src.sillm.validation.ValidationResult.to_dict
 - **Calls**: list
 
-### src.sllm.compat.autopilot_backend_for_client
-- **Calls**: src.sllm.compat.is_shell_llm_client
+### src.sillm.compat.autopilot_backend_for_client
+- **Calls**: src.sillm.compat.is_shell_llm_client
 
-### src.sllm.validation.intent_contracts
+### src.sillm.validation.intent_contracts
 
-### src.sllm.nlp.ShellIntent.to_dsl
+### src.sillm.nlp.ShellIntent.to_dsl
 
-### src.sllm.compat.agent_backend_profiles
+### src.sillm.compat.agent_backend_profiles
 > Return Koru-compatible backend profile metadata for shell LLM control.
 
-### src.sllm.compat.agent_backend_aliases
+### src.sillm.compat.agent_backend_aliases
 > Return Koru backend aliases owned by SLLM.
 
 ## Process Flows
@@ -112,7 +112,7 @@ Key execution flows identified:
 
 ### Flow 1: launch_koru_agent
 ```
-launch_koru_agent [src.sllm.compat]
+launch_koru_agent [src.sillm.compat]
   └─ →> normalize_client_id
   └─ →> get_client_spec
       └─> normalize_client_id
@@ -122,42 +122,39 @@ launch_koru_agent [src.sllm.compat]
 
 ### Flow 2: main
 ```
-main [src.sllm.cli]
+main [src.sillm.cli]
+  └─> _normalize_extra_arg_tokens
   └─> _print
-  └─> _drive
-      └─> _print
-      └─ →> drive_shell_llm
-          └─> build_drive_plan
 ```
 
 ### Flow 3: detect_koru_agent_rows
 ```
-detect_koru_agent_rows [src.sllm.compat]
+detect_koru_agent_rows [src.sillm.compat]
   └─ →> detect_clients
       └─> normalize_client_id
 ```
 
 ### Flow 4: to_dict
 ```
-to_dict [src.sllm.controller.ShellDrivePlan]
+to_dict [src.sillm.controller.ShellDrivePlan]
 ```
 
 ### Flow 5: tool_registry_entries
 ```
-tool_registry_entries [src.sllm.compat]
+tool_registry_entries [src.sillm.compat]
   └─ →> iter_client_specs
 ```
 
 ### Flow 6: is_client_available
 ```
-is_client_available [src.sllm.compat]
+is_client_available [src.sillm.compat]
   └─ →> get_client_spec
       └─> normalize_client_id
 ```
 
 ### Flow 7: drive_koru_chat
 ```
-drive_koru_chat [src.sllm.compat]
+drive_koru_chat [src.sillm.compat]
   └─ →> drive_shell_llm
       └─> build_drive_plan
           └─> _resolve_spec
@@ -166,116 +163,116 @@ drive_koru_chat [src.sllm.compat]
 
 ### Flow 8: shell_preview
 ```
-shell_preview [src.sllm.controller.ShellDrivePlan]
+shell_preview [src.sillm.controller.ShellDrivePlan]
 ```
 
 ### Flow 9: shell_client_ids
 ```
-shell_client_ids [src.sllm.compat]
+shell_client_ids [src.sillm.compat]
   └─ →> iter_client_specs
 ```
 
 ### Flow 10: shell_process_patterns
 ```
-shell_process_patterns [src.sllm.compat]
+shell_process_patterns [src.sillm.compat]
   └─ →> iter_client_specs
 ```
 
 ## Key Classes
 
-### src.sllm.controller.ShellDrivePlan
+### src.sillm.controller.ShellDrivePlan
 - **Methods**: 2
-- **Key Methods**: src.sllm.controller.ShellDrivePlan.shell_preview, src.sllm.controller.ShellDrivePlan.to_dict
+- **Key Methods**: src.sillm.controller.ShellDrivePlan.shell_preview, src.sillm.controller.ShellDrivePlan.to_dict
 
-### src.sllm.registry.ShellClientSpec
+### src.sillm.registry.ShellClientSpec
 - **Methods**: 2
-- **Key Methods**: src.sllm.registry.ShellClientSpec.command_path, src.sllm.registry.ShellClientSpec.to_dict
+- **Key Methods**: src.sillm.registry.ShellClientSpec.command_path, src.sillm.registry.ShellClientSpec.to_dict
 
-### src.sllm.controller.ShellDriveResult
+### src.sillm.controller.ShellDriveResult
 - **Methods**: 1
-- **Key Methods**: src.sllm.controller.ShellDriveResult.to_dict
+- **Key Methods**: src.sillm.controller.ShellDriveResult.to_dict
 
-### src.sllm.validation.ValidationResult
+### src.sillm.validation.ValidationResult
 - **Methods**: 1
-- **Key Methods**: src.sllm.validation.ValidationResult.to_dict
+- **Key Methods**: src.sillm.validation.ValidationResult.to_dict
 
-### src.sllm.nlp.ShellIntent
+### src.sillm.nlp.ShellIntent
 - **Methods**: 1
-- **Key Methods**: src.sllm.nlp.ShellIntent.to_dsl
+- **Key Methods**: src.sillm.nlp.ShellIntent.to_dsl
 
-### src.sllm.controller.SllmError
+### src.sillm.controller.SllmError
 > Base error for SLLM control failures.
 - **Methods**: 0
 - **Inherits**: RuntimeError
 
-### src.sllm.controller.UnknownClientError
+### src.sillm.controller.UnknownClientError
 > Requested client is not registered.
 - **Methods**: 0
 - **Inherits**: SllmError
 
-### src.sllm.controller.ClientUnavailableError
+### src.sillm.controller.ClientUnavailableError
 > Registered client command is not available in PATH.
 - **Methods**: 0
 - **Inherits**: SllmError
 
-### src.sllm.controller.ShellDriveRequest
+### src.sillm.controller.ShellDriveRequest
 - **Methods**: 0
 
 ## Data Transformation Functions
 
 Key functions that process and transform data:
 
-### src.sllm.cli._build_parser
+### src.sillm.cli._build_parser
 - **Output to**: argparse.ArgumentParser, parser.add_subparsers, sub.add_parser, clients.add_argument, sub.add_parser
 
-### src.sllm.validation.validate_intent
-- **Output to**: ValidationResult, src.sllm.registry.get_client_spec, errors.append, intent.prompt.strip, errors.append
+### src.sillm.validation.validate_intent
+- **Output to**: ValidationResult, src.sillm.registry.get_client_spec, errors.append, intent.prompt.strip, errors.append
 
-### src.sllm.validation._validate_raw_dsl
+### src.sillm.validation._validate_raw_dsl
 - **Output to**: raw_dsl.get, isinstance, str, str, isinstance
 
-### src.sllm.validation.validate_intent_contracts
+### src.sillm.validation.validate_intent_contracts
 - **Output to**: parse_contract_line, list, errors.append, parsed.append, list
 
-### src.sllm.compat.shell_process_patterns
-- **Output to**: tuple, src.sllm.registry.iter_client_specs
+### src.sillm.compat.shell_process_patterns
+- **Output to**: tuple, src.sillm.registry.iter_client_specs
 
 ## Public API Surface
 
 Functions exposed as public API (no underscore prefix):
 
-- `src.sllm.compat.launch_koru_agent` - 17 calls
-- `src.sllm.controller.build_drive_plan` - 11 calls
-- `src.sllm.controller.drive_shell_llm` - 10 calls
-- `src.sllm.cli.main` - 9 calls
-- `src.sllm.compat.detect_koru_agent_rows` - 9 calls
-- `src.sllm.validation.validate_intent` - 8 calls
-- `src.sllm.controller.save_prompt` - 7 calls
-- `src.sllm.validation.validate_intent_contracts` - 6 calls
-- `src.sllm.nlp.intent_from_text` - 5 calls
-- `src.sllm.controller.ShellDrivePlan.to_dict` - 4 calls
-- `src.sllm.registry.ShellClientSpec.to_dict` - 4 calls
-- `src.sllm.registry.normalize_client_id` - 4 calls
-- `src.sllm.validation.ecosystem_status` - 4 calls
-- `src.sllm.compat.tool_registry_entries` - 4 calls
-- `src.sllm.registry.detect_clients` - 3 calls
-- `src.sllm.compat.is_client_available` - 3 calls
-- `src.sllm.compat.drive_koru_chat` - 3 calls
-- `src.sllm.controller.ShellDrivePlan.shell_preview` - 2 calls
-- `src.sllm.controller.ShellDriveResult.to_dict` - 2 calls
-- `src.sllm.controller.result_from_error` - 2 calls
-- `src.sllm.compat.shell_client_ids` - 2 calls
-- `src.sllm.compat.shell_process_patterns` - 2 calls
-- `src.sllm.registry.ShellClientSpec.command_path` - 1 calls
-- `src.sllm.registry.get_client_spec` - 1 calls
-- `src.sllm.validation.ValidationResult.to_dict` - 1 calls
-- `src.sllm.compat.is_shell_llm_client` - 1 calls
-- `src.sllm.compat.autopilot_backend_for_client` - 1 calls
-- `src.sllm.registry.iter_client_specs` - 0 calls
-- `src.sllm.validation.intent_contracts` - 0 calls
-- `src.sllm.nlp.ShellIntent.to_dsl` - 0 calls
-- `src.sllm.compat.agent_backend_profiles` - 0 calls
-- `src.sllm.compat.agent_backend_aliases` - 0 calls
+- `src.sillm.compat.launch_koru_agent` - 17 calls
+- `src.sillm.cli.main` - 11 calls
+- `src.sillm.controller.build_drive_plan` - 11 calls
+- `src.sillm.controller.drive_shell_llm` - 10 calls
+- `src.sillm.compat.detect_koru_agent_rows` - 9 calls
+- `src.sillm.validation.validate_intent` - 8 calls
+- `src.sillm.controller.save_prompt` - 7 calls
+- `src.sillm.validation.validate_intent_contracts` - 6 calls
+- `src.sillm.nlp.intent_from_text` - 5 calls
+- `src.sillm.controller.ShellDrivePlan.to_dict` - 4 calls
+- `src.sillm.registry.ShellClientSpec.to_dict` - 4 calls
+- `src.sillm.registry.normalize_client_id` - 4 calls
+- `src.sillm.validation.ecosystem_status` - 4 calls
+- `src.sillm.compat.tool_registry_entries` - 4 calls
+- `src.sillm.registry.detect_clients` - 3 calls
+- `src.sillm.compat.is_client_available` - 3 calls
+- `src.sillm.compat.drive_koru_chat` - 3 calls
+- `src.sillm.controller.ShellDrivePlan.shell_preview` - 2 calls
+- `src.sillm.controller.ShellDriveResult.to_dict` - 2 calls
+- `src.sillm.controller.result_from_error` - 2 calls
+- `src.sillm.compat.shell_client_ids` - 2 calls
+- `src.sillm.compat.shell_process_patterns` - 2 calls
+- `src.sillm.registry.ShellClientSpec.command_path` - 1 calls
+- `src.sillm.registry.get_client_spec` - 1 calls
+- `src.sillm.validation.ValidationResult.to_dict` - 1 calls
+- `src.sillm.compat.is_shell_llm_client` - 1 calls
+- `src.sillm.compat.autopilot_backend_for_client` - 1 calls
+- `src.sillm.registry.iter_client_specs` - 0 calls
+- `src.sillm.validation.intent_contracts` - 0 calls
+- `src.sillm.nlp.ShellIntent.to_dsl` - 0 calls
+- `src.sillm.compat.agent_backend_profiles` - 0 calls
+- `src.sillm.compat.agent_backend_aliases` - 0 calls
 
 ## System Interactions
 
@@ -289,9 +286,9 @@ graph TD
     launch_koru_agent --> print
     main --> parse_args
     main --> AssertionError
+    main --> _normalize_extra_arg
     main --> _print
     main --> _drive
-    main --> _nlp
     detect_koru_agent_ro --> detect_clients
     detect_koru_agent_ro --> get
     detect_koru_agent_ro --> str

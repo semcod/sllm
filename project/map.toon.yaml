@@ -1,32 +1,35 @@
-# sllm | 11f 1220L | python:8,shell:2,less:1 | 2026-06-03
-# stats: 45 func | 9 cls | 11 mod | CC̄=4.0 | critical:3 | cycles:0
-# alerts[5]: CC test_compat_exports_koru_agent_rows=17; CC _intent_from_nlp2dsl=15; CC drive_shell_llm=10; CC _validate_raw_dsl=9; CC launch_koru_agent=8
-# hotspots[5]: test_compat_exports_koru_agent_rows fan=11; launch_koru_agent fan=10; build_drive_plan fan=10; _intent_from_nlp2dsl fan=10; _drive fan=9
+# sllm | 12f 1334L | python:9,shell:2,less:1 | 2026-06-08
+# stats: 47 func | 9 cls | 12 mod | CC̄=4.3 | critical:3 | cycles:0
+# alerts[5]: CC test_compat_exports_koru_agent_rows=19; CC _intent_from_nlp2dsl=15; CC drive_shell_llm=10; CC _validate_raw_dsl=9; CC launch_koru_agent=8
+# hotspots[5]: _intent_from_nlp2dsl fan=11; test_compat_exports_koru_agent_rows fan=11; main fan=10; launch_koru_agent fan=10; build_drive_plan fan=10
 # evolution: baseline
 # Keys: M=modules, D=details, i=imports, e=exports, c=classes, f=functions, m=methods
-M[11]:
-  app.doql.less,28
+M[12]:
+  app.doql.less,47
   project.sh,50
-  src/sllm/__init__.py,37
-  src/sllm/cli.py,140
-  src/sllm/compat.py,206
-  src/sllm/controller.py,245
-  src/sllm/nlp.py,105
-  src/sllm/registry.py,168
-  src/sllm/validation.py,128
-  tests/test_sllm.py,111
+  src/sillm/__init__.py,37
+  src/sillm/__main__.py,8
+  src/sillm/cli.py,168
+  src/sillm/compat.py,206
+  src/sillm/controller.py,249
+  src/sillm/nlp.py,105
+  src/sillm/registry.py,169
+  src/sillm/validation.py,128
+  tests/test_sillm.py,165
   tree.sh,2
 D:
-  src/sllm/__init__.py:
-  src/sllm/cli.py:
-    e: _print,_build_parser,_read_prompt,_drive,_nlp,main
+  src/sillm/__init__.py:
+  src/sillm/__main__.py:
+  src/sillm/cli.py:
+    e: _print,_build_parser,_normalize_extra_arg_tokens,_read_prompt,_drive,_nlp,main
     _print(payload;output_format)
     _build_parser()
+    _normalize_extra_arg_tokens(argv)
     _read_prompt(args)
     _drive(args)
     _nlp(args)
     main(argv)
-  src/sllm/compat.py:
+  src/sillm/compat.py:
     e: agent_backend_profiles,agent_backend_aliases,is_shell_llm_client,is_client_available,shell_client_ids,shell_process_patterns,tool_registry_entries,autopilot_backend_for_client,detect_koru_agent_rows,drive_koru_chat,launch_koru_agent
     agent_backend_profiles()
     agent_backend_aliases()
@@ -39,7 +42,7 @@ D:
     detect_koru_agent_rows()
     drive_koru_chat()
     launch_koru_agent()
-  src/sllm/controller.py:
+  src/sillm/controller.py:
     e: _prompt_root,save_prompt,_resolve_spec,_resolve_command,build_drive_plan,_timeout_value,drive_shell_llm,result_from_error,SllmError,UnknownClientError,ClientUnavailableError,ShellDriveRequest,ShellDrivePlan,ShellDriveResult
     SllmError:  # Base error for SLLM control failures.
     UnknownClientError:  # Requested client is not registered.
@@ -55,21 +58,21 @@ D:
     _timeout_value(timeout_seconds)
     drive_shell_llm(request)
     result_from_error(client_id;exc)
-  src/sllm/nlp.py:
+  src/sillm/nlp.py:
     e: _client_from_text,_strip_drive_prefix,_intent_from_nlp2dsl,intent_from_text,ShellIntent
     ShellIntent: to_dsl(0)
     _client_from_text(text;default_client)
     _strip_drive_prefix(text)
     _intent_from_nlp2dsl(text;default_client)
     intent_from_text(text)
-  src/sllm/registry.py:
+  src/sillm/registry.py:
     e: normalize_client_id,iter_client_specs,get_client_spec,detect_clients,ShellClientSpec
     ShellClientSpec: command_path(1),to_dict(0)
     normalize_client_id(raw)
     iter_client_specs()
     get_client_spec(client_id)
     detect_clients()
-  src/sllm/validation.py:
+  src/sillm/validation.py:
     e: validate_intent,_validate_raw_dsl,intent_contracts,validate_intent_contracts,ecosystem_status,ValidationResult
     ValidationResult: to_dict(0)
     validate_intent(intent)
@@ -77,12 +80,13 @@ D:
     intent_contracts()
     validate_intent_contracts()
     ecosystem_status()
-  tests/test_sllm.py:
-    e: test_registry_normalizes_common_aliases,test_detect_clients_marks_available_from_injected_which,test_compat_exports_koru_agent_rows,test_build_drive_plan_uses_message_file_for_aider,test_nlp_rules_select_client_and_prompt,test_validate_intent_rejects_raw_dsl_without_sllm_drive,test_intent_contracts_are_exposed_for_ecosystem_validation
+  tests/test_sillm.py:
+    e: test_registry_normalizes_common_aliases,test_detect_clients_marks_available_from_injected_which,test_compat_exports_koru_agent_rows,test_build_drive_plan_uses_message_file_for_aider,test_drive_cli_accepts_space_form_extra_arg_flags,test_nlp_rules_select_client_and_prompt,test_validate_intent_rejects_raw_dsl_without_sllm_drive,test_intent_contracts_are_exposed_for_ecosystem_validation
     test_registry_normalizes_common_aliases()
     test_detect_clients_marks_available_from_injected_which()
-    test_compat_exports_koru_agent_rows(monkeypatch)
-    test_build_drive_plan_uses_message_file_for_aider(monkeypatch;tmp_path)
+    test_compat_exports_koru_agent_rows()
+    test_build_drive_plan_uses_message_file_for_aider(tmp_path)
+    test_drive_cli_accepts_space_form_extra_arg_flags(monkeypatch;tmp_path;capsys)
     test_nlp_rules_select_client_and_prompt()
     test_validate_intent_rejects_raw_dsl_without_sllm_drive()
     test_intent_contracts_are_exposed_for_ecosystem_validation()

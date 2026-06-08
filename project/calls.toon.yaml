@@ -1,59 +1,60 @@
 # code2llm call graph | /home/tom/github/semcod/sllm
-# generated in 0.07s
-# nodes: 35 | edges: 46 | modules: 6
-# CC̄=3.3
+# generated in 0.02s
+# nodes: 36 | edges: 46 | modules: 6
+# CC̄=3.4
 
 HUBS[20]:
-  src.sllm.cli._build_parser
-    CC=1  in:1  out:24  total:25
-  src.sllm.nlp._intent_from_nlp2dsl
-    CC=15  in:1  out:24  total:25
-  src.sllm.compat.launch_koru_agent
+  src.sillm.nlp._intent_from_nlp2dsl
+    CC=15  in:1  out:25  total:26
+  src.sillm.cli._build_parser
+    CC=1  in:1  out:25  total:26
+  src.sillm.compat.launch_koru_agent
     CC=8  in:0  out:17  total:17
-  src.sllm.cli._print
+  src.sillm.cli._print
     CC=6  in:7  out:10  total:17
-  src.sllm.cli._nlp
-    CC=4  in:1  out:12  total:13
-  src.sllm.controller.drive_shell_llm
-    CC=10  in:3  out:10  total:13
-  src.sllm.controller.build_drive_plan
+  src.sillm.cli._nlp
+    CC=5  in:1  out:13  total:14
+  src.sillm.controller.build_drive_plan
     CC=3  in:2  out:11  total:13
-  src.sllm.validation._validate_raw_dsl
-    CC=9  in:1  out:11  total:12
-  src.sllm.cli._drive
+  src.sillm.controller.drive_shell_llm
+    CC=10  in:3  out:10  total:13
+  src.sillm.cli._drive
     CC=5  in:1  out:11  total:12
-  src.sllm.registry.normalize_client_id
+  src.sillm.validation._validate_raw_dsl
+    CC=9  in:1  out:11  total:12
+  src.sillm.cli.main
+    CC=6  in:0  out:11  total:11
+  src.sillm.registry.normalize_client_id
     CC=1  in:6  out:4  total:10
-  src.sllm.compat.detect_koru_agent_rows
-    CC=5  in:0  out:9  total:9
-  src.sllm.validation.validate_intent
-    CC=4  in:1  out:8  total:9
-  src.sllm.controller.save_prompt
+  src.sillm.controller.save_prompt
     CC=2  in:2  out:7  total:9
-  src.sllm.cli.main
+  src.sillm.validation.validate_intent
+    CC=4  in:1  out:8  total:9
+  src.sillm.compat.detect_koru_agent_rows
     CC=5  in:0  out:9  total:9
-  src.sllm.nlp._client_from_text
-    CC=6  in:1  out:6  total:7
-  src.sllm.validation.validate_intent_contracts
+  src.sillm.validation.validate_intent_contracts
     CC=4  in:1  out:6  total:7
-  src.sllm.registry.get_client_spec
+  src.sillm.registry.get_client_spec
     CC=3  in:6  out:1  total:7
-  src.sllm.nlp._strip_drive_prefix
+  src.sillm.nlp._client_from_text
+    CC=6  in:1  out:6  total:7
+  src.sillm.cli._normalize_extra_arg_tokens
     CC=5  in:1  out:5  total:6
-  src.sllm.nlp.intent_from_text
+  src.sillm.nlp.intent_from_text
     CC=3  in:1  out:5  total:6
-  src.sllm.registry.detect_clients
-    CC=4  in:2  out:3  total:5
+  src.sillm.nlp._strip_drive_prefix
+    CC=5  in:1  out:5  total:6
 
 MODULES:
-  src.sllm.cli  [6 funcs]
-    _build_parser  CC=1  out:24
+  src.sillm.cli  [7 funcs]
+    _build_parser  CC=1  out:25
     _drive  CC=5  out:11
-    _nlp  CC=4  out:12
+    _nlp  CC=5  out:13
+    _normalize_extra_arg_tokens  CC=5  out:5
     _print  CC=6  out:10
     _read_prompt  CC=4  out:4
-    main  CC=5  out:9
-  src.sllm.compat  [9 funcs]
+    main  CC=6  out:11
+  src.sillm.compat  [9 funcs]
     autopilot_backend_for_client  CC=2  out:1
     detect_koru_agent_rows  CC=5  out:9
     drive_koru_chat  CC=1  out:3
@@ -63,7 +64,7 @@ MODULES:
     shell_client_ids  CC=2  out:2
     shell_process_patterns  CC=2  out:2
     tool_registry_entries  CC=4  out:4
-  src.sllm.controller  [8 funcs]
+  src.sillm.controller  [8 funcs]
     _prompt_root  CC=2  out:3
     _resolve_command  CC=2  out:3
     _resolve_spec  CC=2  out:2
@@ -72,66 +73,66 @@ MODULES:
     drive_shell_llm  CC=10  out:10
     result_from_error  CC=1  out:2
     save_prompt  CC=2  out:7
-  src.sllm.nlp  [4 funcs]
+  src.sillm.nlp  [4 funcs]
     _client_from_text  CC=6  out:6
-    _intent_from_nlp2dsl  CC=15  out:24
+    _intent_from_nlp2dsl  CC=15  out:25
     _strip_drive_prefix  CC=5  out:5
     intent_from_text  CC=3  out:5
-  src.sllm.registry  [4 funcs]
+  src.sillm.registry  [4 funcs]
     detect_clients  CC=4  out:3
     get_client_spec  CC=3  out:1
     iter_client_specs  CC=1  out:0
     normalize_client_id  CC=1  out:4
-  src.sllm.validation  [4 funcs]
+  src.sillm.validation  [4 funcs]
     _validate_raw_dsl  CC=9  out:11
     ecosystem_status  CC=2  out:4
     validate_intent  CC=4  out:8
     validate_intent_contracts  CC=4  out:6
 
 EDGES:
-  src.sllm.cli._drive → src.sllm.cli._print
-  src.sllm.cli._drive → src.sllm.controller.drive_shell_llm
-  src.sllm.cli._drive → src.sllm.controller.result_from_error
-  src.sllm.cli._drive → src.sllm.cli._read_prompt
-  src.sllm.cli._nlp → src.sllm.nlp.intent_from_text
-  src.sllm.cli._nlp → src.sllm.validation.validate_intent
-  src.sllm.cli._nlp → src.sllm.controller.drive_shell_llm
-  src.sllm.cli._nlp → src.sllm.cli._print
-  src.sllm.cli.main → src.sllm.cli._print
-  src.sllm.cli.main → src.sllm.cli._drive
-  src.sllm.cli.main → src.sllm.cli._nlp
-  src.sllm.cli.main → src.sllm.cli._build_parser
-  src.sllm.cli.main → src.sllm.registry.detect_clients
-  src.sllm.cli.main → src.sllm.validation.ecosystem_status
-  src.sllm.controller.save_prompt → src.sllm.controller._prompt_root
-  src.sllm.controller._resolve_spec → src.sllm.registry.get_client_spec
-  src.sllm.controller.build_drive_plan → src.sllm.controller._resolve_spec
-  src.sllm.controller.build_drive_plan → src.sllm.controller._resolve_command
-  src.sllm.controller.build_drive_plan → src.sllm.controller.save_prompt
-  src.sllm.controller.drive_shell_llm → src.sllm.controller.build_drive_plan
-  src.sllm.controller.drive_shell_llm → src.sllm.controller._timeout_value
-  src.sllm.registry.get_client_spec → src.sllm.registry.normalize_client_id
-  src.sllm.registry.detect_clients → src.sllm.registry.normalize_client_id
-  src.sllm.validation.validate_intent → src.sllm.registry.get_client_spec
-  src.sllm.validation.validate_intent → src.sllm.validation._validate_raw_dsl
-  src.sllm.validation._validate_raw_dsl → src.sllm.registry.normalize_client_id
-  src.sllm.validation.ecosystem_status → src.sllm.validation.validate_intent_contracts
-  src.sllm.nlp._client_from_text → src.sllm.registry.iter_client_specs
-  src.sllm.nlp._client_from_text → src.sllm.registry.normalize_client_id
-  src.sllm.nlp._intent_from_nlp2dsl → src.sllm.registry.normalize_client_id
-  src.sllm.nlp.intent_from_text → src.sllm.nlp._client_from_text
-  src.sllm.nlp.intent_from_text → src.sllm.nlp._intent_from_nlp2dsl
-  src.sllm.nlp.intent_from_text → src.sllm.registry.get_client_spec
-  src.sllm.nlp.intent_from_text → src.sllm.nlp._strip_drive_prefix
-  src.sllm.compat.is_shell_llm_client → src.sllm.registry.get_client_spec
-  src.sllm.compat.is_client_available → src.sllm.registry.get_client_spec
-  src.sllm.compat.shell_client_ids → src.sllm.registry.iter_client_specs
-  src.sllm.compat.shell_process_patterns → src.sllm.registry.iter_client_specs
-  src.sllm.compat.tool_registry_entries → src.sllm.registry.iter_client_specs
-  src.sllm.compat.autopilot_backend_for_client → src.sllm.compat.is_shell_llm_client
-  src.sllm.compat.detect_koru_agent_rows → src.sllm.registry.detect_clients
-  src.sllm.compat.drive_koru_chat → src.sllm.controller.drive_shell_llm
-  src.sllm.compat.launch_koru_agent → src.sllm.registry.normalize_client_id
-  src.sllm.compat.launch_koru_agent → src.sllm.registry.get_client_spec
-  src.sllm.compat.launch_koru_agent → src.sllm.controller.save_prompt
-  src.sllm.compat.launch_koru_agent → src.sllm.controller.build_drive_plan
+  src.sillm.cli._drive → src.sillm.cli._print
+  src.sillm.cli._drive → src.sillm.controller.drive_shell_llm
+  src.sillm.cli._drive → src.sillm.controller.result_from_error
+  src.sillm.cli._drive → src.sillm.cli._read_prompt
+  src.sillm.cli._nlp → src.sillm.nlp.intent_from_text
+  src.sillm.cli._nlp → src.sillm.validation.validate_intent
+  src.sillm.cli._nlp → src.sillm.controller.drive_shell_llm
+  src.sillm.cli._nlp → src.sillm.cli._print
+  src.sillm.cli.main → src.sillm.cli._normalize_extra_arg_tokens
+  src.sillm.cli.main → src.sillm.cli._print
+  src.sillm.cli.main → src.sillm.cli._drive
+  src.sillm.cli.main → src.sillm.cli._nlp
+  src.sillm.cli.main → src.sillm.cli._build_parser
+  src.sillm.cli.main → src.sillm.registry.detect_clients
+  src.sillm.controller.save_prompt → src.sillm.controller._prompt_root
+  src.sillm.controller._resolve_spec → src.sillm.registry.get_client_spec
+  src.sillm.controller.build_drive_plan → src.sillm.controller._resolve_spec
+  src.sillm.controller.build_drive_plan → src.sillm.controller._resolve_command
+  src.sillm.controller.build_drive_plan → src.sillm.controller.save_prompt
+  src.sillm.controller.drive_shell_llm → src.sillm.controller.build_drive_plan
+  src.sillm.controller.drive_shell_llm → src.sillm.controller._timeout_value
+  src.sillm.registry.get_client_spec → src.sillm.registry.normalize_client_id
+  src.sillm.registry.detect_clients → src.sillm.registry.normalize_client_id
+  src.sillm.validation.validate_intent → src.sillm.registry.get_client_spec
+  src.sillm.validation.validate_intent → src.sillm.validation._validate_raw_dsl
+  src.sillm.validation._validate_raw_dsl → src.sillm.registry.normalize_client_id
+  src.sillm.validation.ecosystem_status → src.sillm.validation.validate_intent_contracts
+  src.sillm.nlp._client_from_text → src.sillm.registry.iter_client_specs
+  src.sillm.nlp._client_from_text → src.sillm.registry.normalize_client_id
+  src.sillm.nlp._intent_from_nlp2dsl → src.sillm.registry.normalize_client_id
+  src.sillm.nlp.intent_from_text → src.sillm.nlp._client_from_text
+  src.sillm.nlp.intent_from_text → src.sillm.nlp._intent_from_nlp2dsl
+  src.sillm.nlp.intent_from_text → src.sillm.registry.get_client_spec
+  src.sillm.nlp.intent_from_text → src.sillm.nlp._strip_drive_prefix
+  src.sillm.compat.is_shell_llm_client → src.sillm.registry.get_client_spec
+  src.sillm.compat.is_client_available → src.sillm.registry.get_client_spec
+  src.sillm.compat.shell_client_ids → src.sillm.registry.iter_client_specs
+  src.sillm.compat.shell_process_patterns → src.sillm.registry.iter_client_specs
+  src.sillm.compat.tool_registry_entries → src.sillm.registry.iter_client_specs
+  src.sillm.compat.autopilot_backend_for_client → src.sillm.compat.is_shell_llm_client
+  src.sillm.compat.detect_koru_agent_rows → src.sillm.registry.detect_clients
+  src.sillm.compat.drive_koru_chat → src.sillm.controller.drive_shell_llm
+  src.sillm.compat.launch_koru_agent → src.sillm.registry.normalize_client_id
+  src.sillm.compat.launch_koru_agent → src.sillm.registry.get_client_spec
+  src.sillm.compat.launch_koru_agent → src.sillm.controller.save_prompt
+  src.sillm.compat.launch_koru_agent → src.sillm.controller.build_drive_plan

@@ -5,22 +5,22 @@ flowchart TD
     classDef entry fill:#4dabf7,stroke:#1971c2,color:#fff
 
     subgraph Core
-        src__sllm__cli___print["_print"]
-        src__sllm__cli___build_parser["_build_parser"]
-        src__sllm__cli___read_prompt["_read_prompt"]
-        src__sllm__cli___drive["_drive"]
-        src__sllm__cli___nlp["_nlp"]
-        src__sllm__cli__main["main"]
-        src__sllm__controller__ShellDrivePlan__shell_preview["shell_preview"]
-        src__sllm__controller__ShellDrivePlan__to_dict["to_dict"]
-        src__sllm__controller__ShellDriveResult__to_dict["to_dict"]
-        src__sllm__controller___resolve_spec["_resolve_spec"]
-        src__sllm__controller__build_drive_plan["build_drive_plan"]
-        src__sllm__controller__drive_shell_llm("drive_shell_llm CC=10")
-        src__sllm__registry__ShellClientSpec__command_path["command_path"]
-        src__sllm__registry__ShellClientSpec__to_dict["to_dict"]
-        src__sllm__registry__normalize_client_id["normalize_client_id"]
-        ...["+19 more"]
+        src__sillm__cli___print["_print"]
+        src__sillm__cli___build_parser["_build_parser"]
+        src__sillm__cli___normalize_extra_arg_tokens["_normalize_extra_arg_tokens"]
+        src__sillm__cli___read_prompt["_read_prompt"]
+        src__sillm__cli___drive["_drive"]
+        src__sillm__cli___nlp["_nlp"]
+        src__sillm__cli__main["main"]
+        src__sillm__controller__ShellDrivePlan__shell_preview["shell_preview"]
+        src__sillm__controller__ShellDrivePlan__to_dict["to_dict"]
+        src__sillm__controller__ShellDriveResult__to_dict["to_dict"]
+        src__sillm__controller___resolve_spec["_resolve_spec"]
+        src__sillm__controller__build_drive_plan["build_drive_plan"]
+        src__sillm__controller__drive_shell_llm("drive_shell_llm CC=10")
+        src__sillm__registry__ShellClientSpec__command_path["command_path"]
+        src__sillm__registry__ShellClientSpec__to_dict["to_dict"]
+        ...["+20 more"]
     end
 
-    class src__sllm__cli___print,src__sllm__cli___build_parser,src__sllm__cli___read_prompt,src__sllm__cli___drive,src__sllm__cli___nlp,src__sllm__cli__main,src__sllm__controller__ShellDrivePlan__shell_preview,src__sllm__controller__ShellDrivePlan__to_dict,src__sllm__controller__ShellDriveResult__to_dict,src__sllm__registry__ShellClientSpec__command_path entry
+    class src__sillm__cli___print,src__sillm__cli___build_parser,src__sillm__cli___normalize_extra_arg_tokens,src__sillm__cli___read_prompt,src__sillm__cli___drive,src__sillm__cli___nlp,src__sillm__cli__main,src__sillm__controller__ShellDrivePlan__shell_preview,src__sillm__controller__ShellDrivePlan__to_dict,src__sillm__controller__ShellDriveResult__to_dict entry

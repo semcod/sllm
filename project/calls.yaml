@@ -1,453 +1,461 @@
 project: /home/tom/github/semcod/sllm
 generated_from: code2llm call graph analysis
 stats:
-  total_nodes: 35
+  total_nodes: 36
   total_edges: 46
   modules_count: 6
 nodes:
-  src.sllm.compat.autopilot_backend_for_client:
-    name: autopilot_backend_for_client
-    module: src.sllm.compat
-    line: 91
-    cyclomatic_complexity: 2
-    calls_out: 1
-    calls_in: 0
-  src.sllm.controller._prompt_root:
-    name: _prompt_root
-    module: src.sllm.controller
-    line: 93
-    cyclomatic_complexity: 2
+  src.sillm.controller.build_drive_plan:
+    name: build_drive_plan
+    module: src.sillm.controller
+    line: 128
+    cyclomatic_complexity: 3
+    calls_out: 11
+    calls_in: 2
+  src.sillm.registry.detect_clients:
+    name: detect_clients
+    module: src.sillm.registry
+    line: 143
+    cyclomatic_complexity: 4
     calls_out: 3
-    calls_in: 1
-  src.sllm.nlp._client_from_text:
-    name: _client_from_text
-    module: src.sllm.nlp
-    line: 41
-    cyclomatic_complexity: 6
-    calls_out: 6
-    calls_in: 1
-  src.sllm.compat.launch_koru_agent:
-    name: launch_koru_agent
-    module: src.sllm.compat
-    line: 145
-    cyclomatic_complexity: 8
-    calls_out: 17
-    calls_in: 0
-  src.sllm.validation.validate_intent_contracts:
+    calls_in: 2
+  src.sillm.validation.validate_intent_contracts:
     name: validate_intent_contracts
-    module: src.sllm.validation
+    module: src.sillm.validation
     line: 66
     cyclomatic_complexity: 4
     calls_out: 6
     calls_in: 1
-  src.sllm.controller._timeout_value:
-    name: _timeout_value
-    module: src.sllm.controller
-    line: 153
-    cyclomatic_complexity: 3
-    calls_out: 1
-    calls_in: 1
-  src.sllm.controller._resolve_spec:
-    name: _resolve_spec
-    module: src.sllm.controller
-    line: 110
-    cyclomatic_complexity: 2
-    calls_out: 2
-    calls_in: 1
-  src.sllm.cli._nlp:
-    name: _nlp
-    module: src.sllm.cli
-    line: 98
-    cyclomatic_complexity: 4
-    calls_out: 12
-    calls_in: 1
-  src.sllm.nlp._strip_drive_prefix:
-    name: _strip_drive_prefix
-    module: src.sllm.nlp
-    line: 50
-    cyclomatic_complexity: 5
-    calls_out: 5
-    calls_in: 1
-  src.sllm.registry.detect_clients:
-    name: detect_clients
-    module: src.sllm.registry
-    line: 142
-    cyclomatic_complexity: 4
-    calls_out: 3
-    calls_in: 2
-  src.sllm.cli._print:
-    name: _print
-    module: src.sllm.cli
-    line: 16
-    cyclomatic_complexity: 6
-    calls_out: 10
-    calls_in: 7
-  src.sllm.controller.drive_shell_llm:
-    name: drive_shell_llm
-    module: src.sllm.controller
-    line: 160
-    cyclomatic_complexity: 10
-    calls_out: 10
-    calls_in: 3
-  src.sllm.registry.normalize_client_id:
-    name: normalize_client_id
-    module: src.sllm.registry
-    line: 125
-    cyclomatic_complexity: 1
-    calls_out: 4
-    calls_in: 6
-  src.sllm.validation._validate_raw_dsl:
-    name: _validate_raw_dsl
-    module: src.sllm.validation
-    line: 44
-    cyclomatic_complexity: 9
-    calls_out: 11
-    calls_in: 1
-  src.sllm.compat.is_client_available:
-    name: is_client_available
-    module: src.sllm.compat
-    line: 51
-    cyclomatic_complexity: 2
-    calls_out: 3
-    calls_in: 0
-  src.sllm.cli._read_prompt:
-    name: _read_prompt
-    module: src.sllm.cli
-    line: 65
-    cyclomatic_complexity: 4
-    calls_out: 4
-    calls_in: 1
-  src.sllm.registry.get_client_spec:
-    name: get_client_spec
-    module: src.sllm.registry
-    line: 134
-    cyclomatic_complexity: 3
-    calls_out: 1
-    calls_in: 6
-  src.sllm.compat.detect_koru_agent_rows:
-    name: detect_koru_agent_rows
-    module: src.sllm.compat
-    line: 95
-    cyclomatic_complexity: 5
-    calls_out: 9
-    calls_in: 0
-  src.sllm.compat.tool_registry_entries:
-    name: tool_registry_entries
-    module: src.sllm.compat
-    line: 64
-    cyclomatic_complexity: 4
-    calls_out: 4
-    calls_in: 0
-  src.sllm.validation.validate_intent:
-    name: validate_intent
-    module: src.sllm.validation
-    line: 33
-    cyclomatic_complexity: 4
-    calls_out: 8
-    calls_in: 1
-  src.sllm.controller.build_drive_plan:
-    name: build_drive_plan
-    module: src.sllm.controller
-    line: 125
-    cyclomatic_complexity: 3
-    calls_out: 11
-    calls_in: 2
-  src.sllm.validation.ecosystem_status:
-    name: ecosystem_status
-    module: src.sllm.validation
-    line: 100
-    cyclomatic_complexity: 2
-    calls_out: 4
-    calls_in: 1
-  src.sllm.controller.save_prompt:
+  src.sillm.controller.save_prompt:
     name: save_prompt
-    module: src.sllm.controller
-    line: 99
+    module: src.sillm.controller
+    line: 102
     cyclomatic_complexity: 2
     calls_out: 7
     calls_in: 2
-  src.sllm.compat.shell_client_ids:
-    name: shell_client_ids
-    module: src.sllm.compat
-    line: 56
+  src.sillm.registry.normalize_client_id:
+    name: normalize_client_id
+    module: src.sillm.registry
+    line: 126
+    cyclomatic_complexity: 1
+    calls_out: 4
+    calls_in: 6
+  src.sillm.compat.autopilot_backend_for_client:
+    name: autopilot_backend_for_client
+    module: src.sillm.compat
+    line: 91
     cyclomatic_complexity: 2
-    calls_out: 2
+    calls_out: 1
     calls_in: 0
-  src.sllm.cli._drive:
+  src.sillm.cli._drive:
     name: _drive
-    module: src.sllm.cli
-    line: 76
+    module: src.sillm.cli
+    line: 102
     cyclomatic_complexity: 5
     calls_out: 11
     calls_in: 1
-  src.sllm.cli._build_parser:
-    name: _build_parser
-    module: src.sllm.cli
-    line: 29
-    cyclomatic_complexity: 1
-    calls_out: 24
-    calls_in: 1
-  src.sllm.controller._resolve_command:
-    name: _resolve_command
-    module: src.sllm.controller
-    line: 117
-    cyclomatic_complexity: 2
-    calls_out: 3
-    calls_in: 1
-  src.sllm.compat.shell_process_patterns:
-    name: shell_process_patterns
-    module: src.sllm.compat
-    line: 60
-    cyclomatic_complexity: 2
-    calls_out: 2
-    calls_in: 0
-  src.sllm.nlp._intent_from_nlp2dsl:
-    name: _intent_from_nlp2dsl
-    module: src.sllm.nlp
-    line: 62
-    cyclomatic_complexity: 15
-    calls_out: 24
-    calls_in: 1
-  src.sllm.cli.main:
-    name: main
-    module: src.sllm.cli
-    line: 123
-    cyclomatic_complexity: 5
-    calls_out: 9
-    calls_in: 0
-  src.sllm.compat.drive_koru_chat:
-    name: drive_koru_chat
-    module: src.sllm.compat
-    line: 126
-    cyclomatic_complexity: 1
-    calls_out: 3
-    calls_in: 0
-  src.sllm.registry.iter_client_specs:
-    name: iter_client_specs
-    module: src.sllm.registry
-    line: 130
-    cyclomatic_complexity: 1
-    calls_out: 0
-    calls_in: 4
-  src.sllm.controller.result_from_error:
-    name: result_from_error
-    module: src.sllm.controller
-    line: 223
-    cyclomatic_complexity: 1
-    calls_out: 2
-    calls_in: 1
-  src.sllm.nlp.intent_from_text:
-    name: intent_from_text
-    module: src.sllm.nlp
-    line: 91
+  src.sillm.controller._timeout_value:
+    name: _timeout_value
+    module: src.sillm.controller
+    line: 156
     cyclomatic_complexity: 3
-    calls_out: 5
+    calls_out: 1
     calls_in: 1
-  src.sllm.compat.is_shell_llm_client:
+  src.sillm.compat.is_shell_llm_client:
     name: is_shell_llm_client
-    module: src.sllm.compat
+    module: src.sillm.compat
     line: 47
     cyclomatic_complexity: 1
     calls_out: 1
     calls_in: 1
+  src.sillm.controller._resolve_spec:
+    name: _resolve_spec
+    module: src.sillm.controller
+    line: 113
+    cyclomatic_complexity: 2
+    calls_out: 2
+    calls_in: 1
+  src.sillm.compat.is_client_available:
+    name: is_client_available
+    module: src.sillm.compat
+    line: 51
+    cyclomatic_complexity: 2
+    calls_out: 3
+    calls_in: 0
+  src.sillm.compat.shell_process_patterns:
+    name: shell_process_patterns
+    module: src.sillm.compat
+    line: 60
+    cyclomatic_complexity: 2
+    calls_out: 2
+    calls_in: 0
+  src.sillm.controller._prompt_root:
+    name: _prompt_root
+    module: src.sillm.controller
+    line: 96
+    cyclomatic_complexity: 2
+    calls_out: 3
+    calls_in: 1
+  src.sillm.cli._normalize_extra_arg_tokens:
+    name: _normalize_extra_arg_tokens
+    module: src.sillm.cli
+    line: 75
+    cyclomatic_complexity: 5
+    calls_out: 5
+    calls_in: 1
+  src.sillm.nlp.intent_from_text:
+    name: intent_from_text
+    module: src.sillm.nlp
+    line: 91
+    cyclomatic_complexity: 3
+    calls_out: 5
+    calls_in: 1
+  src.sillm.validation.ecosystem_status:
+    name: ecosystem_status
+    module: src.sillm.validation
+    line: 100
+    cyclomatic_complexity: 2
+    calls_out: 4
+    calls_in: 1
+  src.sillm.compat.launch_koru_agent:
+    name: launch_koru_agent
+    module: src.sillm.compat
+    line: 145
+    cyclomatic_complexity: 8
+    calls_out: 17
+    calls_in: 0
+  src.sillm.controller._resolve_command:
+    name: _resolve_command
+    module: src.sillm.controller
+    line: 120
+    cyclomatic_complexity: 2
+    calls_out: 3
+    calls_in: 1
+  src.sillm.compat.tool_registry_entries:
+    name: tool_registry_entries
+    module: src.sillm.compat
+    line: 64
+    cyclomatic_complexity: 4
+    calls_out: 4
+    calls_in: 0
+  src.sillm.compat.drive_koru_chat:
+    name: drive_koru_chat
+    module: src.sillm.compat
+    line: 126
+    cyclomatic_complexity: 1
+    calls_out: 3
+    calls_in: 0
+  src.sillm.validation.validate_intent:
+    name: validate_intent
+    module: src.sillm.validation
+    line: 33
+    cyclomatic_complexity: 4
+    calls_out: 8
+    calls_in: 1
+  src.sillm.nlp._strip_drive_prefix:
+    name: _strip_drive_prefix
+    module: src.sillm.nlp
+    line: 50
+    cyclomatic_complexity: 5
+    calls_out: 5
+    calls_in: 1
+  src.sillm.controller.drive_shell_llm:
+    name: drive_shell_llm
+    module: src.sillm.controller
+    line: 163
+    cyclomatic_complexity: 10
+    calls_out: 10
+    calls_in: 3
+  src.sillm.cli.main:
+    name: main
+    module: src.sillm.cli
+    line: 150
+    cyclomatic_complexity: 6
+    calls_out: 11
+    calls_in: 0
+  src.sillm.nlp._intent_from_nlp2dsl:
+    name: _intent_from_nlp2dsl
+    module: src.sillm.nlp
+    line: 62
+    cyclomatic_complexity: 15
+    calls_out: 25
+    calls_in: 1
+  src.sillm.validation._validate_raw_dsl:
+    name: _validate_raw_dsl
+    module: src.sillm.validation
+    line: 44
+    cyclomatic_complexity: 9
+    calls_out: 11
+    calls_in: 1
+  src.sillm.cli._print:
+    name: _print
+    module: src.sillm.cli
+    line: 18
+    cyclomatic_complexity: 6
+    calls_out: 10
+    calls_in: 7
+  src.sillm.cli._build_parser:
+    name: _build_parser
+    module: src.sillm.cli
+    line: 31
+    cyclomatic_complexity: 1
+    calls_out: 25
+    calls_in: 1
+  src.sillm.controller.result_from_error:
+    name: result_from_error
+    module: src.sillm.controller
+    line: 226
+    cyclomatic_complexity: 1
+    calls_out: 2
+    calls_in: 1
+  src.sillm.cli._nlp:
+    name: _nlp
+    module: src.sillm.cli
+    line: 124
+    cyclomatic_complexity: 5
+    calls_out: 13
+    calls_in: 1
+  src.sillm.registry.get_client_spec:
+    name: get_client_spec
+    module: src.sillm.registry
+    line: 135
+    cyclomatic_complexity: 3
+    calls_out: 1
+    calls_in: 6
+  src.sillm.compat.shell_client_ids:
+    name: shell_client_ids
+    module: src.sillm.compat
+    line: 56
+    cyclomatic_complexity: 2
+    calls_out: 2
+    calls_in: 0
+  src.sillm.nlp._client_from_text:
+    name: _client_from_text
+    module: src.sillm.nlp
+    line: 41
+    cyclomatic_complexity: 6
+    calls_out: 6
+    calls_in: 1
+  src.sillm.compat.detect_koru_agent_rows:
+    name: detect_koru_agent_rows
+    module: src.sillm.compat
+    line: 95
+    cyclomatic_complexity: 5
+    calls_out: 9
+    calls_in: 0
+  src.sillm.cli._read_prompt:
+    name: _read_prompt
+    module: src.sillm.cli
+    line: 91
+    cyclomatic_complexity: 4
+    calls_out: 4
+    calls_in: 1
+  src.sillm.registry.iter_client_specs:
+    name: iter_client_specs
+    module: src.sillm.registry
+    line: 131
+    cyclomatic_complexity: 1
+    calls_out: 0
+    calls_in: 4
 edges:
-- caller: src.sllm.cli._drive
-  callee: src.sllm.cli._print
+- caller: src.sillm.cli._drive
+  callee: src.sillm.cli._print
   call_type: resolved
-- caller: src.sllm.cli._drive
-  callee: src.sllm.controller.drive_shell_llm
+- caller: src.sillm.cli._drive
+  callee: src.sillm.controller.drive_shell_llm
   call_type: resolved
-- caller: src.sllm.cli._drive
-  callee: src.sllm.controller.result_from_error
+- caller: src.sillm.cli._drive
+  callee: src.sillm.controller.result_from_error
   call_type: resolved
-- caller: src.sllm.cli._drive
-  callee: src.sllm.cli._read_prompt
+- caller: src.sillm.cli._drive
+  callee: src.sillm.cli._read_prompt
   call_type: resolved
-- caller: src.sllm.cli._nlp
-  callee: src.sllm.nlp.intent_from_text
+- caller: src.sillm.cli._nlp
+  callee: src.sillm.nlp.intent_from_text
   call_type: resolved
-- caller: src.sllm.cli._nlp
-  callee: src.sllm.validation.validate_intent
+- caller: src.sillm.cli._nlp
+  callee: src.sillm.validation.validate_intent
   call_type: resolved
-- caller: src.sllm.cli._nlp
-  callee: src.sllm.controller.drive_shell_llm
+- caller: src.sillm.cli._nlp
+  callee: src.sillm.controller.drive_shell_llm
   call_type: resolved
-- caller: src.sllm.cli._nlp
-  callee: src.sllm.cli._print
+- caller: src.sillm.cli._nlp
+  callee: src.sillm.cli._print
   call_type: resolved
-- caller: src.sllm.cli.main
-  callee: src.sllm.cli._print
+- caller: src.sillm.cli.main
+  callee: src.sillm.cli._normalize_extra_arg_tokens
   call_type: resolved
-- caller: src.sllm.cli.main
-  callee: src.sllm.cli._drive
+- caller: src.sillm.cli.main
+  callee: src.sillm.cli._print
   call_type: resolved
-- caller: src.sllm.cli.main
-  callee: src.sllm.cli._nlp
+- caller: src.sillm.cli.main
+  callee: src.sillm.cli._drive
   call_type: resolved
-- caller: src.sllm.cli.main
-  callee: src.sllm.cli._build_parser
+- caller: src.sillm.cli.main
+  callee: src.sillm.cli._nlp
   call_type: resolved
-- caller: src.sllm.cli.main
-  callee: src.sllm.registry.detect_clients
+- caller: src.sillm.cli.main
+  callee: src.sillm.cli._build_parser
   call_type: resolved
-- caller: src.sllm.cli.main
-  callee: src.sllm.validation.ecosystem_status
+- caller: src.sillm.cli.main
+  callee: src.sillm.registry.detect_clients
   call_type: resolved
-- caller: src.sllm.controller.save_prompt
-  callee: src.sllm.controller._prompt_root
+- caller: src.sillm.controller.save_prompt
+  callee: src.sillm.controller._prompt_root
   call_type: resolved
-- caller: src.sllm.controller._resolve_spec
-  callee: src.sllm.registry.get_client_spec
+- caller: src.sillm.controller._resolve_spec
+  callee: src.sillm.registry.get_client_spec
   call_type: resolved
-- caller: src.sllm.controller.build_drive_plan
-  callee: src.sllm.controller._resolve_spec
+- caller: src.sillm.controller.build_drive_plan
+  callee: src.sillm.controller._resolve_spec
   call_type: resolved
-- caller: src.sllm.controller.build_drive_plan
-  callee: src.sllm.controller._resolve_command
+- caller: src.sillm.controller.build_drive_plan
+  callee: src.sillm.controller._resolve_command
   call_type: resolved
-- caller: src.sllm.controller.build_drive_plan
-  callee: src.sllm.controller.save_prompt
+- caller: src.sillm.controller.build_drive_plan
+  callee: src.sillm.controller.save_prompt
   call_type: resolved
-- caller: src.sllm.controller.drive_shell_llm
-  callee: src.sllm.controller.build_drive_plan
+- caller: src.sillm.controller.drive_shell_llm
+  callee: src.sillm.controller.build_drive_plan
   call_type: resolved
-- caller: src.sllm.controller.drive_shell_llm
-  callee: src.sllm.controller._timeout_value
+- caller: src.sillm.controller.drive_shell_llm
+  callee: src.sillm.controller._timeout_value
   call_type: resolved
-- caller: src.sllm.registry.get_client_spec
-  callee: src.sllm.registry.normalize_client_id
+- caller: src.sillm.registry.get_client_spec
+  callee: src.sillm.registry.normalize_client_id
   call_type: resolved
-- caller: src.sllm.registry.detect_clients
-  callee: src.sllm.registry.normalize_client_id
+- caller: src.sillm.registry.detect_clients
+  callee: src.sillm.registry.normalize_client_id
   call_type: resolved
-- caller: src.sllm.validation.validate_intent
-  callee: src.sllm.registry.get_client_spec
+- caller: src.sillm.validation.validate_intent
+  callee: src.sillm.registry.get_client_spec
   call_type: resolved
-- caller: src.sllm.validation.validate_intent
-  callee: src.sllm.validation._validate_raw_dsl
+- caller: src.sillm.validation.validate_intent
+  callee: src.sillm.validation._validate_raw_dsl
   call_type: resolved
-- caller: src.sllm.validation._validate_raw_dsl
-  callee: src.sllm.registry.normalize_client_id
+- caller: src.sillm.validation._validate_raw_dsl
+  callee: src.sillm.registry.normalize_client_id
   call_type: resolved
-- caller: src.sllm.validation.ecosystem_status
-  callee: src.sllm.validation.validate_intent_contracts
+- caller: src.sillm.validation.ecosystem_status
+  callee: src.sillm.validation.validate_intent_contracts
   call_type: resolved
-- caller: src.sllm.nlp._client_from_text
-  callee: src.sllm.registry.iter_client_specs
+- caller: src.sillm.nlp._client_from_text
+  callee: src.sillm.registry.iter_client_specs
   call_type: resolved
-- caller: src.sllm.nlp._client_from_text
-  callee: src.sllm.registry.normalize_client_id
+- caller: src.sillm.nlp._client_from_text
+  callee: src.sillm.registry.normalize_client_id
   call_type: resolved
-- caller: src.sllm.nlp._intent_from_nlp2dsl
-  callee: src.sllm.registry.normalize_client_id
+- caller: src.sillm.nlp._intent_from_nlp2dsl
+  callee: src.sillm.registry.normalize_client_id
   call_type: resolved
-- caller: src.sllm.nlp.intent_from_text
-  callee: src.sllm.nlp._client_from_text
+- caller: src.sillm.nlp.intent_from_text
+  callee: src.sillm.nlp._client_from_text
   call_type: resolved
-- caller: src.sllm.nlp.intent_from_text
-  callee: src.sllm.nlp._intent_from_nlp2dsl
+- caller: src.sillm.nlp.intent_from_text
+  callee: src.sillm.nlp._intent_from_nlp2dsl
   call_type: resolved
-- caller: src.sllm.nlp.intent_from_text
-  callee: src.sllm.registry.get_client_spec
+- caller: src.sillm.nlp.intent_from_text
+  callee: src.sillm.registry.get_client_spec
   call_type: resolved
-- caller: src.sllm.nlp.intent_from_text
-  callee: src.sllm.nlp._strip_drive_prefix
+- caller: src.sillm.nlp.intent_from_text
+  callee: src.sillm.nlp._strip_drive_prefix
   call_type: resolved
-- caller: src.sllm.compat.is_shell_llm_client
-  callee: src.sllm.registry.get_client_spec
+- caller: src.sillm.compat.is_shell_llm_client
+  callee: src.sillm.registry.get_client_spec
   call_type: resolved
-- caller: src.sllm.compat.is_client_available
-  callee: src.sllm.registry.get_client_spec
+- caller: src.sillm.compat.is_client_available
+  callee: src.sillm.registry.get_client_spec
   call_type: resolved
-- caller: src.sllm.compat.shell_client_ids
-  callee: src.sllm.registry.iter_client_specs
+- caller: src.sillm.compat.shell_client_ids
+  callee: src.sillm.registry.iter_client_specs
   call_type: resolved
-- caller: src.sllm.compat.shell_process_patterns
-  callee: src.sllm.registry.iter_client_specs
+- caller: src.sillm.compat.shell_process_patterns
+  callee: src.sillm.registry.iter_client_specs
   call_type: resolved
-- caller: src.sllm.compat.tool_registry_entries
-  callee: src.sllm.registry.iter_client_specs
+- caller: src.sillm.compat.tool_registry_entries
+  callee: src.sillm.registry.iter_client_specs
   call_type: resolved
-- caller: src.sllm.compat.autopilot_backend_for_client
-  callee: src.sllm.compat.is_shell_llm_client
+- caller: src.sillm.compat.autopilot_backend_for_client
+  callee: src.sillm.compat.is_shell_llm_client
   call_type: resolved
-- caller: src.sllm.compat.detect_koru_agent_rows
-  callee: src.sllm.registry.detect_clients
+- caller: src.sillm.compat.detect_koru_agent_rows
+  callee: src.sillm.registry.detect_clients
   call_type: resolved
-- caller: src.sllm.compat.drive_koru_chat
-  callee: src.sllm.controller.drive_shell_llm
+- caller: src.sillm.compat.drive_koru_chat
+  callee: src.sillm.controller.drive_shell_llm
   call_type: resolved
-- caller: src.sllm.compat.launch_koru_agent
-  callee: src.sllm.registry.normalize_client_id
+- caller: src.sillm.compat.launch_koru_agent
+  callee: src.sillm.registry.normalize_client_id
   call_type: resolved
-- caller: src.sllm.compat.launch_koru_agent
-  callee: src.sllm.registry.get_client_spec
+- caller: src.sillm.compat.launch_koru_agent
+  callee: src.sillm.registry.get_client_spec
   call_type: resolved
-- caller: src.sllm.compat.launch_koru_agent
-  callee: src.sllm.controller.save_prompt
+- caller: src.sillm.compat.launch_koru_agent
+  callee: src.sillm.controller.save_prompt
   call_type: resolved
-- caller: src.sllm.compat.launch_koru_agent
-  callee: src.sllm.controller.build_drive_plan
+- caller: src.sillm.compat.launch_koru_agent
+  callee: src.sillm.controller.build_drive_plan
   call_type: resolved
 modules:
-  src.sllm.cli:
-  - src.sllm.cli._build_parser
-  - src.sllm.cli._drive
-  - src.sllm.cli._nlp
-  - src.sllm.cli._print
-  - src.sllm.cli._read_prompt
-  - src.sllm.cli.main
-  src.sllm.compat:
-  - src.sllm.compat.autopilot_backend_for_client
-  - src.sllm.compat.detect_koru_agent_rows
-  - src.sllm.compat.drive_koru_chat
-  - src.sllm.compat.is_client_available
-  - src.sllm.compat.is_shell_llm_client
-  - src.sllm.compat.launch_koru_agent
-  - src.sllm.compat.shell_client_ids
-  - src.sllm.compat.shell_process_patterns
-  - src.sllm.compat.tool_registry_entries
-  src.sllm.controller:
-  - src.sllm.controller._prompt_root
-  - src.sllm.controller._resolve_command
-  - src.sllm.controller._resolve_spec
-  - src.sllm.controller._timeout_value
-  - src.sllm.controller.build_drive_plan
-  - src.sllm.controller.drive_shell_llm
-  - src.sllm.controller.result_from_error
-  - src.sllm.controller.save_prompt
-  src.sllm.nlp:
-  - src.sllm.nlp._client_from_text
-  - src.sllm.nlp._intent_from_nlp2dsl
-  - src.sllm.nlp._strip_drive_prefix
-  - src.sllm.nlp.intent_from_text
-  src.sllm.registry:
-  - src.sllm.registry.detect_clients
-  - src.sllm.registry.get_client_spec
-  - src.sllm.registry.iter_client_specs
-  - src.sllm.registry.normalize_client_id
-  src.sllm.validation:
-  - src.sllm.validation._validate_raw_dsl
-  - src.sllm.validation.ecosystem_status
-  - src.sllm.validation.validate_intent
-  - src.sllm.validation.validate_intent_contracts
+  src.sillm.cli:
+  - src.sillm.cli._build_parser
+  - src.sillm.cli._drive
+  - src.sillm.cli._nlp
+  - src.sillm.cli._normalize_extra_arg_tokens
+  - src.sillm.cli._print
+  - src.sillm.cli._read_prompt
+  - src.sillm.cli.main
+  src.sillm.compat:
+  - src.sillm.compat.autopilot_backend_for_client
+  - src.sillm.compat.detect_koru_agent_rows
+  - src.sillm.compat.drive_koru_chat
+  - src.sillm.compat.is_client_available
+  - src.sillm.compat.is_shell_llm_client
+  - src.sillm.compat.launch_koru_agent
+  - src.sillm.compat.shell_client_ids
+  - src.sillm.compat.shell_process_patterns
+  - src.sillm.compat.tool_registry_entries
+  src.sillm.controller:
+  - src.sillm.controller._prompt_root
+  - src.sillm.controller._resolve_command
+  - src.sillm.controller._resolve_spec
+  - src.sillm.controller._timeout_value
+  - src.sillm.controller.build_drive_plan
+  - src.sillm.controller.drive_shell_llm
+  - src.sillm.controller.result_from_error
+  - src.sillm.controller.save_prompt
+  src.sillm.nlp:
+  - src.sillm.nlp._client_from_text
+  - src.sillm.nlp._intent_from_nlp2dsl
+  - src.sillm.nlp._strip_drive_prefix
+  - src.sillm.nlp.intent_from_text
+  src.sillm.registry:
+  - src.sillm.registry.detect_clients
+  - src.sillm.registry.get_client_spec
+  - src.sillm.registry.iter_client_specs
+  - src.sillm.registry.normalize_client_id
+  src.sillm.validation:
+  - src.sillm.validation._validate_raw_dsl
+  - src.sillm.validation.ecosystem_status
+  - src.sillm.validation.validate_intent
+  - src.sillm.validation.validate_intent_contracts
 entry_points:
-- src.sllm.cli.main
-- src.sllm.compat.agent_backend_aliases
-- src.sllm.compat.agent_backend_profiles
-- src.sllm.compat.autopilot_backend_for_client
-- src.sllm.compat.detect_koru_agent_rows
-- src.sllm.compat.drive_koru_chat
-- src.sllm.compat.is_client_available
-- src.sllm.compat.launch_koru_agent
-- src.sllm.compat.shell_client_ids
-- src.sllm.compat.shell_process_patterns
-- src.sllm.compat.tool_registry_entries
-- src.sllm.controller.ShellDrivePlan.shell_preview
-- src.sllm.controller.ShellDrivePlan.to_dict
-- src.sllm.controller.ShellDriveResult.to_dict
-- src.sllm.nlp.ShellIntent.to_dsl
-- src.sllm.registry.ShellClientSpec.command_path
-- src.sllm.registry.ShellClientSpec.to_dict
-- src.sllm.validation.ValidationResult.to_dict
-- src.sllm.validation.intent_contracts
+- src.sillm.cli.main
+- src.sillm.compat.agent_backend_aliases
+- src.sillm.compat.agent_backend_profiles
+- src.sillm.compat.autopilot_backend_for_client
+- src.sillm.compat.detect_koru_agent_rows
+- src.sillm.compat.drive_koru_chat
+- src.sillm.compat.is_client_available
+- src.sillm.compat.launch_koru_agent
+- src.sillm.compat.shell_client_ids
+- src.sillm.compat.shell_process_patterns
+- src.sillm.compat.tool_registry_entries
+- src.sillm.controller.ShellDrivePlan.shell_preview
+- src.sillm.controller.ShellDrivePlan.to_dict
+- src.sillm.controller.ShellDriveResult.to_dict
+- src.sillm.nlp.ShellIntent.to_dsl
+- src.sillm.registry.ShellClientSpec.command_path
+- src.sillm.registry.ShellClientSpec.to_dict
+- src.sillm.validation.ValidationResult.to_dict
+- src.sillm.validation.intent_contracts

@@ -28,30 +28,38 @@
 ├── pyproject.toml
 ├── README.md
 ├── src
-│   ├── sllm
-│   │   ├── cli.py
-│   │   ├── compat.py
-│   │   ├── controller.py
-│   │   ├── __init__.py
-│   │   ├── nlp.py
-│   │   ├── registry.py
-│   │   └── validation.py
-│   └── sllm.egg-info
-│       ├── dependency_links.txt
-│       ├── entry_points.txt
-│       ├── PKG-INFO
-│       ├── requires.txt
-│       ├── SOURCES.txt
-│       └── top_level.txt
+│   ├── clilm.egg-info
+│   │   ├── dependency_links.txt
+│   │   ├── entry_points.txt
+│   │   ├── PKG-INFO
+│   │   ├── requires.txt
+│   │   ├── SOURCES.txt
+│   │   └── top_level.txt
+│   ├── fullm.egg-info
+│   │   ├── dependency_links.txt
+│   │   ├── entry_points.txt
+│   │   ├── PKG-INFO
+│   │   ├── requires.txt
+│   │   ├── SOURCES.txt
+│   │   └── top_level.txt
+│   └── sillm
+│       ├── cli.py
+│       ├── compat.py
+│       ├── controller.py
+│       ├── __init__.py
+│       ├── __main__.py
+│       ├── nlp.py
+│       ├── registry.py
+│       └── validation.py
 ├── SUMD.md
 ├── SUMR.md
 ├── testql-scenarios
 │   └── generated-cli-tests.testql.toon.yaml
 ├── tests
-│   └── test_sllm.py
+│   └── test_sillm.py
 ├── tree.sh
 ├── tree.txt
 ├── uv.lock
 └── VERSION
 
-7 directories, 48 files
+8 directories, 55 files

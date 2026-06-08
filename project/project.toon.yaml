@@ -1,39 +1,45 @@
-# sllm | 45 func | 6f | 1668L | python | 2026-06-03
+# sllm | 46 func | 6f | 1776L | python | 2026-06-08
 # generated in 0.00s
 
 HEALTH:
-  CC̄=3.3  critical=2 (limit:10)  dup=0  cycles=0
+  CC̄=3.4  critical=2 (limit:10)  dup=0  cycles=0
 
-ALERTS[4]:
+ALERTS[6]:
   !   cc_exceeded      _intent_from_nlp2dsl = 15 (limit:15)
-  !   high_fan_out     _intent_from_nlp2dsl = 13 (limit:10)
+  !   high_fan_out     _intent_from_nlp2dsl = 14 (limit:10)
+  !   high_fan_out     _nlp = 10 (limit:10)
+  !   high_fan_out     main = 10 (limit:10)
   !   high_fan_out     build_drive_plan = 10 (limit:10)
   !   high_fan_out     launch_koru_agent = 10 (limit:10)
 
-MODULES[11] (top by size):
+MODULES[13] (top by size):
   M[goal.yaml] 511L C:0 F:0 CC↑0 D:0 (yaml)
-  M[src/sllm/controller.py] 244L C:6 F:11 CC↑10 D:2 (python)
-  M[src/sllm/compat.py] 205L C:0 F:11 CC↑8 D:0 (python)
-  M[src/sllm/registry.py] 167L C:1 F:6 CC↑4 D:5 (python)
-  M[src/sllm/cli.py] 139L C:0 F:6 CC↑6 D:0 (python)
-  M[src/sllm/validation.py] 127L C:1 F:6 CC↑9 D:1 (python)
-  M[src/sllm/nlp.py] 104L C:1 F:5 CC↑15 D:1 (python)
-  M[pyproject.toml] 84L C:0 F:0 CC↑0 D:0 (toml)
+  M[src/sillm/controller.py] 248L C:6 F:11 CC↑10 D:2 (python)
+  M[src/sillm/compat.py] 205L C:0 F:11 CC↑8 D:0 (python)
+  M[src/sillm/registry.py] 168L C:1 F:6 CC↑4 D:5 (python)
+  M[src/sillm/cli.py] 167L C:0 F:7 CC↑6 D:0 (python)
+  M[src/sillm/validation.py] 127L C:1 F:6 CC↑9 D:1 (python)
+  M[src/sillm/nlp.py] 104L C:1 F:5 CC↑15 D:1 (python)
+  M[pyproject.toml] 76L C:0 F:0 CC↑0 D:0 (toml)
+  M[tree.txt] 57L C:0 F:0 CC↑0 D:0 (txt)
   M[project.sh] 50L C:0 F:0 CC↑0 D:0 (shell)
-  M[src/sllm/__init__.py] 36L C:0 F:0 CC↑0 D:0 (python)
-  M[tree.sh] 1L C:0 F:0 CC↑0 D:0 (shell)
-  LANGS: python:7/shell:2/yaml:1/toml:1
+  M[src/sillm/__init__.py] 36L C:0 F:0 CC↑0 D:0 (python)
+  M[testql-scenarios/generated-cli-tests.testql.toon.yaml] 20L C:0 F:0 CC↑0 D:0 (yaml)
+  M[src/sillm/__main__.py] 7L C:0 F:0 CC↑0 D:0 (python)
+  LANGS: python:8/yaml:2/shell:1/toml:1/txt:1
 
-HOTSPOTS[3]:
-  ★ _intent_from_nlp2dsl fan=13  // Orchestrates 13 calls
+HOTSPOTS[5]:
+  ★ _intent_from_nlp2dsl fan=14  // Orchestrates 14 calls
+  ★ _nlp fan=10  // Orchestrates 10 calls
+  ★ main fan=10  // Orchestrates 10 calls
   ★ build_drive_plan fan=10  // Orchestrates 10 calls
-  ★ launch_koru_agent fan=10  // Launch a Koru agent through SLLM while preserving TTY behavior.
+  ★ launch_koru_agent fan=10  // Launch a Koru agent through SILLM while preserving TTY behavior.
 
-Clients with a 
+Clients with a
 
 REFACTOR[2]:
   [1] H/H Split god module goal.yaml (511L, 0 classes)
   [2] M/L Split _intent_from_nlp2dsl (CC=15)
 
 EVOLUTION:
-  2026-06-03 CC̄=3.3 crit=2 1668L // Automated analysis
+  2026-06-08 CC̄=3.4 crit=2 1776L // Automated analysis
